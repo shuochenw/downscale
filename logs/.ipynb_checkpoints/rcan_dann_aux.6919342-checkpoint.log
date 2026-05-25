@@ -1,0 +1,55 @@
+Using device: cuda
+Experiment folder: /projects/sds-lab/Shuochen/downscaling/preprocessed/tas.CanESM2.RCA4.day.NAM-44i.raw.GCM_RCM
+Loaded shapes:
+LR GCM X : torch.Size([54750, 1, 13, 29])
+HR RCM y : torch.Size([54750, 1, 52, 116])
+HR mask  : torch.Size([54750, 1, 52, 116])
+HR elev  : torch.Size([54750, 1, 52, 116])
+HR aux   : torch.Size([54750, 2, 52, 116])
+Domain split:
+Source train years: 1951-2005
+Target domain years: 2041-2070
+Target validation uses the same years with labels for evaluation.
+train_start_idx: 0
+train_end_idx  : 20075
+val_start_idx  : 32850
+val_end_idx    : 43800
+Split shapes:
+X_source  : torch.Size([20075, 1, 13, 29])
+y_source  : torch.Size([20075, 1, 52, 116])
+aux_source: torch.Size([20075, 2, 52, 116])
+X_target  : torch.Size([10950, 1, 13, 29])
+y_target  : torch.Size([10950, 1, 52, 116])
+aux_target: torch.Size([10950, 2, 52, 116])
+mask_target: torch.Size([10950, 1, 52, 116])
+Normalization:
+X_mean: 7.1071882247924805
+X_std : 11.00319766998291
+y_mean: 5.909543037414551
+y_std : 10.123307228088379
+All trial outputs will be saved to: /projects/sds-lab/Shuochen/downscaling/preprocessed/tas.CanESM2.RCA4.day.NAM-44i.raw.GCM_RCM/trained_models/RCAN_HR_Aux_ShallowFusion_DANN/dann_2041_2070_bs256
+[I 2026-05-19 15:46:50,766] A new study created in RDB with name: dann_2041_2070_bs256
+Optuna study: dann_2041_2070_bs256
+Optuna storage: sqlite:////projects/sds-lab/Shuochen/downscaling/preprocessed/tas.CanESM2.RCA4.day.NAM-44i.raw.GCM_RCM/trained_models/RCAN_HR_Aux_ShallowFusion_DANN/dann_2041_2070_bs256/optuna_study.db
+DANN source domain: 1951-2005
+DANN target domain: 2041-2070
+/home/wang.shuoc/downscaling/train_dann.py:631: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = torch.cuda.amp.GradScaler(enabled=use_amp)
+/home/wang.shuoc/downscaling/train_dann.py:684: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=use_amp):
+/home/wang.shuoc/downscaling/train_dann.py:570: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=use_amp):
+Early stopping trial 0000 at epoch 063; best epoch 033.
+[I 2026-05-19 15:53:51,529] Trial 0 finished with value: 0.041717579568902104 and parameters: {'num_resblk': 12, 'batch_size': 256, 'learning_rate': 0.00018103375045079137, 'weight_decay': 6.481760315886425e-06, 'num_features': 128, 'num_groups': 8, 'reduction': 16, 'res_scale': 0.3, 'alpha_domain': 0.0019565088217931214, 'domain_hidden_dim': 64}. Best is trial 0 with value: 0.041717579568902104.
+Early stopping trial 0001 at epoch 058; best epoch 028.
+[I 2026-05-19 16:00:32,148] Trial 1 finished with value: 0.042078797743745046 and parameters: {'num_resblk': 16, 'batch_size': 256, 'learning_rate': 0.0002933787277658459, 'weight_decay': 0.0005928884193620778, 'num_features': 128, 'num_groups': 1, 'reduction': 16, 'res_scale': 0.3, 'alpha_domain': 0.0009556384226883031, 'domain_hidden_dim': 64}. Best is trial 0 with value: 0.041717579568902104.
+Early stopping trial 0002 at epoch 056; best epoch 026.
+[I 2026-05-19 16:06:53,700] Trial 2 finished with value: 0.040841504102019956 and parameters: {'num_resblk': 14, 'batch_size': 256, 'learning_rate': 0.00022623159757404314, 'weight_decay': 1.4479527132775535e-05, 'num_features': 128, 'num_groups': 4, 'reduction': 16, 'res_scale': 0.3, 'alpha_domain': 2.7951647818522615e-05, 'domain_hidden_dim': 32}. Best is trial 2 with value: 0.040841504102019956.
+Early stopping trial 0003 at epoch 058; best epoch 028.
+[I 2026-05-19 16:13:26,381] Trial 3 finished with value: 0.041383207316540147 and parameters: {'num_resblk': 12, 'batch_size': 256, 'learning_rate': 0.00021727515625795445, 'weight_decay': 1.832447263681813e-07, 'num_features': 128, 'num_groups': 8, 'reduction': 32, 'res_scale': 0.3, 'alpha_domain': 0.0015366981363851518, 'domain_hidden_dim': 32}. Best is trial 2 with value: 0.040841504102019956.
+Early stopping trial 0004 at epoch 070; best epoch 040.
+[I 2026-05-19 16:26:43,185] Trial 4 finished with value: 0.041101606527692104 and parameters: {'num_resblk': 18, 'batch_size': 256, 'learning_rate': 0.00013715293107250968, 'weight_decay': 1.0309564383014969e-07, 'num_features': 160, 'num_groups': 2, 'reduction': 16, 'res_scale': 0.3, 'alpha_domain': 6.965046332225869e-05, 'domain_hidden_dim': 64}. Best is trial 2 with value: 0.040841504102019956.
+[I 2026-05-19 16:27:37,473] Trial 5 pruned. 
+[I 2026-05-19 16:28:26,919] Trial 6 pruned. 
+[I 2026-05-19 16:29:13,590] Trial 7 pruned. 
+[I 2026-05-19 16:32:42,804] Trial 8 pruned. 

@@ -1,0 +1,38 @@
+Using device: cuda
+Experiment folder: /projects/sds-lab/Shuochen/downscaling/preprocessed/tas.CanESM2.RCA4.day.NAM-44i.raw.GCM_RCM
+Loaded shapes:
+LR GCM X : torch.Size([54750, 1, 13, 29])
+HR RCM y : torch.Size([54750, 1, 52, 116])
+HR mask  : torch.Size([54750, 1, 52, 116])
+HR elev  : torch.Size([54750, 1, 52, 116])
+HR aux   : torch.Size([54750, 2, 52, 116])
+Year split:
+Train years: 1951-2005
+Val years  : 2006-2099
+train_start_idx: 0
+train_end_idx  : 20075
+val_start_idx  : 20075
+val_end_idx    : 54385
+Split shapes:
+X_train  : torch.Size([20075, 1, 13, 29])
+y_train  : torch.Size([20075, 1, 52, 116])
+aux_train: torch.Size([20075, 2, 52, 116])
+X_val    : torch.Size([34310, 1, 13, 29])
+y_val    : torch.Size([34310, 1, 52, 116])
+aux_val  : torch.Size([34310, 2, 52, 116])
+mask_val : torch.Size([34310, 1, 52, 116])
+Normalization:
+X_mean: 7.1071882247924805
+X_std : 11.00319766998291
+y_mean: 5.909543037414551
+y_std : 10.123307228088379
+All trial outputs will be saved to: /projects/sds-lab/Shuochen/downscaling/preprocessed/tas.CanESM2.RCA4.day.NAM-44i.raw.GCM_RCM/trained_models/RCAN_HR_Aux_ShallowFusion/optuna_lr_gcm_with_hr_mask_elevation_to_hr_rcm_mse_shallowfusion
+[I 2026-05-18 15:55:15,314] A new study created in RDB with name: rcan_hr_aux_shallowfusion_tas_CanESM2_RCA4_NAM44i_raw
+Optuna study: rcan_hr_aux_shallowfusion_tas_CanESM2_RCA4_NAM44i_raw
+Optuna storage: sqlite:////projects/sds-lab/Shuochen/downscaling/preprocessed/tas.CanESM2.RCA4.day.NAM-44i.raw.GCM_RCM/trained_models/RCAN_HR_Aux_ShallowFusion/optuna_lr_gcm_with_hr_mask_elevation_to_hr_rcm_mse_shallowfusion/optuna_study.db
+/home/wang.shuoc/downscaling/train.py:586: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = torch.cuda.amp.GradScaler(enabled=use_amp)
+/home/wang.shuoc/downscaling/train.py:613: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=use_amp):
+/home/wang.shuoc/downscaling/train.py:526: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=use_amp):

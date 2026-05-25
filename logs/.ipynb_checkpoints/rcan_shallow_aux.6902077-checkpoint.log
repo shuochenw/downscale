@@ -1,0 +1,94 @@
+Using device: cuda
+Experiment folder: /projects/sds-lab/Shuochen/downscaling/preprocessed/tas.CanESM2.RCA4.day.NAM-44i.raw.GCM_RCM
+Loaded shapes:
+LR GCM X : torch.Size([54750, 1, 13, 29])
+HR RCM y : torch.Size([54750, 1, 52, 116])
+HR mask  : torch.Size([54750, 1, 52, 116])
+HR elev  : torch.Size([54750, 1, 52, 116])
+HR aux   : torch.Size([54750, 2, 52, 116])
+Year split:
+Train years: 1951-2005
+Val years  : 2006-2099
+train_start_idx: 0
+train_end_idx  : 20075
+val_start_idx  : 20075
+val_end_idx    : 54385
+Split shapes:
+X_train  : torch.Size([20075, 1, 13, 29])
+y_train  : torch.Size([20075, 1, 52, 116])
+aux_train: torch.Size([20075, 2, 52, 116])
+X_val    : torch.Size([34310, 1, 13, 29])
+y_val    : torch.Size([34310, 1, 52, 116])
+aux_val  : torch.Size([34310, 2, 52, 116])
+mask_val : torch.Size([34310, 1, 52, 116])
+Normalization:
+X_mean: 7.1071882247924805
+X_std : 11.00319766998291
+y_mean: 5.909543037414551
+y_std : 10.123307228088379
+All trial outputs will be saved to: /projects/sds-lab/Shuochen/downscaling/preprocessed/tas.CanESM2.RCA4.day.NAM-44i.raw.GCM_RCM/trained_models/RCAN_HR_Aux_ShallowFusion/optuna_lr_gcm_with_hr_mask_elevation_to_hr_rcm_mse_shallowfusion
+[I 2026-05-18 21:00:55,716] Using an existing study with name 'rcan_hr_aux_shallowfusion_tas_CanESM2_RCA4_NAM44i_raw' instead of creating a new one.
+Optuna study: rcan_hr_aux_shallowfusion_tas_CanESM2_RCA4_NAM44i_raw
+Optuna storage: sqlite:////projects/sds-lab/Shuochen/downscaling/preprocessed/tas.CanESM2.RCA4.day.NAM-44i.raw.GCM_RCM/trained_models/RCAN_HR_Aux_ShallowFusion/optuna_lr_gcm_with_hr_mask_elevation_to_hr_rcm_mse_shallowfusion/optuna_study.db
+[W 2026-05-18 21:00:56,421] Trial 68 failed with parameters: {'num_resblk': 14} because of the following error: ValueError("'32' not in (128, 256).").
+Traceback (most recent call last):
+  File "/projects/sds-lab/Shuochen/miniconda3/envs/ai/lib/python3.9/site-packages/optuna/study/_optimize.py", line 205, in _run_trial
+    value_or_values = func(trial)
+  File "/home/wang.shuoc/downscaling/train.py", line 976, in objective
+    return train_one_trial(trial, args, data, save_root, device)
+  File "/home/wang.shuoc/downscaling/train.py", line 561, in train_one_trial
+    hparams = suggest_hparams(trial, args)
+  File "/home/wang.shuoc/downscaling/train.py", line 397, in suggest_hparams
+    "batch_size": trial.suggest_categorical(
+  File "/projects/sds-lab/Shuochen/miniconda3/envs/ai/lib/python3.9/site-packages/optuna/trial/_trial.py", line 408, in suggest_categorical
+    return self._suggest(name, CategoricalDistribution(choices=choices))
+  File "/projects/sds-lab/Shuochen/miniconda3/envs/ai/lib/python3.9/site-packages/optuna/trial/_trial.py", line 637, in _suggest
+    param_value = self.study.sampler.sample_independent(
+  File "/projects/sds-lab/Shuochen/miniconda3/envs/ai/lib/python3.9/site-packages/optuna/samplers/_tpe/sampler.py", line 487, in sample_independent
+    return self._sample(study, trial, search_space, use_trial_cache=not self._constant_liar)[
+  File "/projects/sds-lab/Shuochen/miniconda3/envs/ai/lib/python3.9/site-packages/optuna/samplers/_tpe/sampler.py", line 547, in _sample
+    mpe_below = self._build_parzen_estimator(
+  File "/projects/sds-lab/Shuochen/miniconda3/envs/ai/lib/python3.9/site-packages/optuna/samplers/_tpe/sampler.py", line 570, in _build_parzen_estimator
+    observations = self._get_internal_repr(trials, search_space)
+  File "/projects/sds-lab/Shuochen/miniconda3/envs/ai/lib/python3.9/site-packages/optuna/samplers/_tpe/sampler.py", line 518, in _get_internal_repr
+    values[param_name].append(distribution.to_internal_repr(param))
+  File "/projects/sds-lab/Shuochen/miniconda3/envs/ai/lib/python3.9/site-packages/optuna/distributions.py", line 522, in to_internal_repr
+    raise ValueError(f"'{param_value_in_external_repr}' not in {self.choices}.")
+ValueError: '32' not in (128, 256).
+[W 2026-05-18 21:00:56,437] Trial 68 failed with value None.
+Traceback (most recent call last):
+  File "/home/wang.shuoc/downscaling/train.py", line 1041, in <module>
+    main()
+  File "/home/wang.shuoc/downscaling/train.py", line 978, in main
+    study.optimize(objective, n_trials=args.n_trials)
+  File "/projects/sds-lab/Shuochen/miniconda3/envs/ai/lib/python3.9/site-packages/optuna/study/study.py", line 490, in optimize
+    _optimize(
+  File "/projects/sds-lab/Shuochen/miniconda3/envs/ai/lib/python3.9/site-packages/optuna/study/_optimize.py", line 67, in _optimize
+    _optimize_sequential(
+  File "/projects/sds-lab/Shuochen/miniconda3/envs/ai/lib/python3.9/site-packages/optuna/study/_optimize.py", line 164, in _optimize_sequential
+    frozen_trial_id = _run_trial(study, func, catch)
+  File "/projects/sds-lab/Shuochen/miniconda3/envs/ai/lib/python3.9/site-packages/optuna/study/_optimize.py", line 262, in _run_trial
+    raise func_err
+  File "/projects/sds-lab/Shuochen/miniconda3/envs/ai/lib/python3.9/site-packages/optuna/study/_optimize.py", line 205, in _run_trial
+    value_or_values = func(trial)
+  File "/home/wang.shuoc/downscaling/train.py", line 976, in objective
+    return train_one_trial(trial, args, data, save_root, device)
+  File "/home/wang.shuoc/downscaling/train.py", line 561, in train_one_trial
+    hparams = suggest_hparams(trial, args)
+  File "/home/wang.shuoc/downscaling/train.py", line 397, in suggest_hparams
+    "batch_size": trial.suggest_categorical(
+  File "/projects/sds-lab/Shuochen/miniconda3/envs/ai/lib/python3.9/site-packages/optuna/trial/_trial.py", line 408, in suggest_categorical
+    return self._suggest(name, CategoricalDistribution(choices=choices))
+  File "/projects/sds-lab/Shuochen/miniconda3/envs/ai/lib/python3.9/site-packages/optuna/trial/_trial.py", line 637, in _suggest
+    param_value = self.study.sampler.sample_independent(
+  File "/projects/sds-lab/Shuochen/miniconda3/envs/ai/lib/python3.9/site-packages/optuna/samplers/_tpe/sampler.py", line 487, in sample_independent
+    return self._sample(study, trial, search_space, use_trial_cache=not self._constant_liar)[
+  File "/projects/sds-lab/Shuochen/miniconda3/envs/ai/lib/python3.9/site-packages/optuna/samplers/_tpe/sampler.py", line 547, in _sample
+    mpe_below = self._build_parzen_estimator(
+  File "/projects/sds-lab/Shuochen/miniconda3/envs/ai/lib/python3.9/site-packages/optuna/samplers/_tpe/sampler.py", line 570, in _build_parzen_estimator
+    observations = self._get_internal_repr(trials, search_space)
+  File "/projects/sds-lab/Shuochen/miniconda3/envs/ai/lib/python3.9/site-packages/optuna/samplers/_tpe/sampler.py", line 518, in _get_internal_repr
+    values[param_name].append(distribution.to_internal_repr(param))
+  File "/projects/sds-lab/Shuochen/miniconda3/envs/ai/lib/python3.9/site-packages/optuna/distributions.py", line 522, in to_internal_repr
+    raise ValueError(f"'{param_value_in_external_repr}' not in {self.choices}.")
+ValueError: '32' not in (128, 256).

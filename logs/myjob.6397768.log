@@ -1,0 +1,92 @@
+Using device: cuda
+LR shape: torch.Size([55115, 1, 13, 29])
+HR shape: torch.Size([55115, 1, 52, 116])
+Mask shape: torch.Size([1, 1, 52, 116])
+Epoch 0001 | Train loss: 3.797881e-02 | Val loss: 3.020853e-02
+Saved best model at epoch 1
+Epoch 0002 | Train loss: 3.059628e-02 | Val loss: 3.005825e-02
+Saved best model at epoch 2
+Epoch 0003 | Train loss: 2.938070e-02 | Val loss: 2.952432e-02
+Saved best model at epoch 3
+Epoch 0004 | Train loss: 2.912055e-02 | Val loss: 3.074114e-02
+Epoch 0005 | Train loss: 2.816675e-02 | Val loss: 2.886783e-02
+Saved best model at epoch 5
+Epoch 0006 | Train loss: 2.912264e-02 | Val loss: 2.794008e-02
+Saved best model at epoch 6
+Epoch 0007 | Train loss: 2.826647e-02 | Val loss: 2.704579e-02
+Saved best model at epoch 7
+Epoch 0008 | Train loss: 2.739274e-02 | Val loss: 2.833638e-02
+Epoch 0009 | Train loss: 2.763798e-02 | Val loss: 2.834484e-02
+Epoch 0010 | Train loss: 2.751037e-02 | Val loss: 2.641821e-02
+Saved best model at epoch 10
+Epoch 0011 | Train loss: 2.844069e-02 | Val loss: 2.692066e-02
+Epoch 0012 | Train loss: 2.739490e-02 | Val loss: 2.661841e-02
+Epoch 0013 | Train loss: 2.780801e-02 | Val loss: 2.651154e-02
+Epoch 0014 | Train loss: 2.656642e-02 | Val loss: 2.764487e-02
+Epoch 0015 | Train loss: 2.752183e-02 | Val loss: 2.625728e-02
+Saved best model at epoch 15
+Epoch 0016 | Train loss: 2.739602e-02 | Val loss: 2.556212e-02
+Saved best model at epoch 16
+Epoch 0017 | Train loss: 2.686924e-02 | Val loss: 2.857895e-02
+Epoch 0018 | Train loss: 2.771191e-02 | Val loss: 2.694176e-02
+Epoch 0019 | Train loss: 2.618119e-02 | Val loss: 2.672784e-02
+Epoch 0020 | Train loss: 2.682174e-02 | Val loss: 2.709135e-02
+Epoch 0021 | Train loss: 2.727264e-02 | Val loss: 2.755695e-02
+Epoch 0022 | Train loss: 2.726310e-02 | Val loss: 2.773165e-02
+Epoch 0023 | Train loss: 2.760212e-02 | Val loss: 2.704294e-02
+Epoch 0024 | Train loss: 2.644570e-02 | Val loss: 2.704664e-02
+Epoch 0025 | Train loss: 2.652673e-02 | Val loss: 2.722051e-02
+Epoch 0026 | Train loss: 2.700820e-02 | Val loss: 2.770310e-02
+Epoch 0027 | Train loss: 2.635834e-02 | Val loss: 2.619868e-02
+Epoch 0028 | Train loss: 2.673725e-02 | Val loss: 2.492964e-02
+Saved best model at epoch 28
+Epoch 0029 | Train loss: 2.624217e-02 | Val loss: 2.603973e-02
+Epoch 0030 | Train loss: 2.656220e-02 | Val loss: 2.618251e-02
+Epoch 0031 | Train loss: 2.671292e-02 | Val loss: 2.537632e-02
+Epoch 0032 | Train loss: 2.683503e-02 | Val loss: 2.717928e-02
+Epoch 0033 | Train loss: 2.673235e-02 | Val loss: 2.631891e-02
+Epoch 0034 | Train loss: 2.622230e-02 | Val loss: 2.757805e-02
+Epoch 0035 | Train loss: 2.662102e-02 | Val loss: 2.533747e-02
+Epoch 0036 | Train loss: 2.658885e-02 | Val loss: 2.686238e-02
+Epoch 0037 | Train loss: 2.564773e-02 | Val loss: 2.629980e-02
+Epoch 0038 | Train loss: 2.607029e-02 | Val loss: 2.546984e-02
+Epoch 0039 | Train loss: 2.603317e-02 | Val loss: 2.695516e-02
+Epoch 0040 | Train loss: 2.662554e-02 | Val loss: 2.626716e-02
+Epoch 0041 | Train loss: 2.625639e-02 | Val loss: 2.665590e-02
+Epoch 0042 | Train loss: 2.620412e-02 | Val loss: 2.712137e-02
+Epoch 0043 | Train loss: 2.604870e-02 | Val loss: 2.872292e-02
+Epoch 0044 | Train loss: 2.552003e-02 | Val loss: 2.434654e-02
+Saved best model at epoch 44
+Epoch 0045 | Train loss: 2.536863e-02 | Val loss: 2.689825e-02
+Epoch 0046 | Train loss: 2.525534e-02 | Val loss: 2.554412e-02
+Epoch 0047 | Train loss: 2.542377e-02 | Val loss: 2.630293e-02
+Epoch 0048 | Train loss: 2.538862e-02 | Val loss: 2.673194e-02
+Epoch 0049 | Train loss: 2.596030e-02 | Val loss: 2.644256e-02
+Epoch 0050 | Train loss: 2.585516e-02 | Val loss: 2.557034e-02
+Epoch 0051 | Train loss: 2.596331e-02 | Val loss: 2.577133e-02
+Epoch 0052 | Train loss: 2.529376e-02 | Val loss: 2.579140e-02
+Epoch 0053 | Train loss: 2.582570e-02 | Val loss: 2.651896e-02
+Epoch 0054 | Train loss: 2.591311e-02 | Val loss: 2.503816e-02
+Epoch 0055 | Train loss: 2.551757e-02 | Val loss: 2.644050e-02
+Epoch 0056 | Train loss: 2.552544e-02 | Val loss: 2.731241e-02
+Epoch 0057 | Train loss: 2.631388e-02 | Val loss: 2.601571e-02
+Epoch 0058 | Train loss: 2.608772e-02 | Val loss: 2.531210e-02
+Epoch 0059 | Train loss: 2.582594e-02 | Val loss: 2.562087e-02
+Epoch 0060 | Train loss: 2.506951e-02 | Val loss: 2.637221e-02
+Epoch 0061 | Train loss: 2.503085e-02 | Val loss: 2.560820e-02
+Epoch 0062 | Train loss: 2.532407e-02 | Val loss: 2.657644e-02
+Epoch 0063 | Train loss: 2.526193e-02 | Val loss: 2.643119e-02
+Epoch 0064 | Train loss: 2.471752e-02 | Val loss: 2.558315e-02
+Epoch 0065 | Train loss: 2.472059e-02 | Val loss: 2.711190e-02
+Epoch 0066 | Train loss: 2.502329e-02 | Val loss: 2.551854e-02
+Epoch 0067 | Train loss: 2.540040e-02 | Val loss: 2.655685e-02
+Epoch 0068 | Train loss: 2.562361e-02 | Val loss: 2.696777e-02
+Epoch 0069 | Train loss: 2.549506e-02 | Val loss: 2.495065e-02
+Epoch 0070 | Train loss: 2.518561e-02 | Val loss: 2.653128e-02
+Epoch 0071 | Train loss: 2.500468e-02 | Val loss: 2.578838e-02
+Epoch 0072 | Train loss: 2.474438e-02 | Val loss: 2.592260e-02
+Epoch 0073 | Train loss: 2.485813e-02 | Val loss: 2.633363e-02
+Epoch 0074 | Train loss: 2.500065e-02 | Val loss: 2.625131e-02
+Early stopping triggered.
+Best epoch: 44
+Best val loss: 2.434654e-02

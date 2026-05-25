@@ -1,0 +1,19 @@
+Running with:
+rcm_var = tmean
+gcm_name = CanESM2
+rcm_name = CanRCM4
+grid = NAM-44i
+Using device: cuda
+All trial checkpoints will be saved to: /projects/sds-lab/Shuochen/downscaling/CORDEX/tmean.CanESM2.CanRCM4.day.NAM-44i.mbcn-gridMET/trained_models/SRResNet
+Loaded shapes:
+X       : torch.Size([55115, 1, 13, 29])
+y       : torch.Size([55115, 1, 52, 116])
+mask_hr : torch.Size([55115, 1, 52, 116])
+Train/Val shapes:
+X_train    : torch.Size([20440, 1, 13, 29])
+y_train    : torch.Size([20440, 1, 52, 116])
+mask_train : torch.Size([20440, 1, 52, 116])
+X_val      : torch.Size([7300, 1, 13, 29])
+y_val      : torch.Size([7300, 1, 52, 116])
+mask_val   : torch.Size([7300, 1, 52, 116])
+[I 2026-04-27 13:22:02,734] A new study created in memory with name: no-name-2221ec2d-b3f0-4979-8843-3ff52214df87

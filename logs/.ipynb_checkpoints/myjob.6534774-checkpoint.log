@@ -1,0 +1,81 @@
+Running with:
+rcm_var = tmean
+gcm_name = CanESM2
+rcm_name = CanRCM4
+grid = NAM-44i
+factor = 4
+input_source = gcm
+input_channels = 3
+hr_aux_channels = 2
+hr_elevation_file = high_res_elevation.pth
+alpha_coarse = 0.5
+n_trials = 3000
+epochs = 300
+early_stopping_patience = 30
+batch_size = 256
+model_name = SRResNet
+Using device: cuda
+Input source: gcm
+Input file: low_res.pth
+Input mask file: low_res_mask.pth
+Input elevation file: low_res_elevation.pth
+HR elevation file: high_res_elevation.pth
+Coarse consistency target file: coarse_4x.pth
+Coarse consistency mask file: coarse_4x_mask.pth
+Input channels: 3
+All trial checkpoints will be saved to: /projects/sds-lab/Shuochen/downscaling/CORDEX/tmean.CanESM2.CanRCM4.day.NAM-44i.GCM_to_HR_RCM/trained_models/SRResNet/GCM_low_res_with_mask_elevation
+Loaded shapes:
+X          : torch.Size([55115, 1, 13, 29])
+X_mask     : torch.Size([55115, 1, 13, 29])
+X_elev     : torch.Size([55115, 1, 13, 29])
+y          : torch.Size([55115, 1, 52, 116])
+mask_hr    : torch.Size([55115, 1, 52, 116])
+y_coarse   : torch.Size([55115, 1, 13, 29])
+mask_coarse: torch.Size([55115, 1, 13, 29])
+After checks:
+X          : torch.Size([55115, 1, 13, 29])
+X_mask     : torch.Size([55115, 1, 13, 29])
+X_elev     : torch.Size([55115, 1, 13, 29])
+y          : torch.Size([55115, 1, 52, 116])
+mask_hr    : torch.Size([55115, 1, 52, 116])
+y_coarse   : torch.Size([55115, 1, 13, 29])
+mask_coarse: torch.Size([55115, 1, 13, 29])
+train_end_idx = 20440
+val_start_idx = 47815
+Total samples  = 55115
+Train/Val shapes before model input construction:
+X_train          : torch.Size([20440, 1, 13, 29])
+X_mask_train     : torch.Size([20440, 1, 13, 29])
+X_elev_train     : torch.Size([20440, 1, 13, 29])
+y_train          : torch.Size([20440, 1, 52, 116])
+mask_train       : torch.Size([20440, 1, 52, 116])
+y_coarse_train   : torch.Size([20440, 1, 13, 29])
+mask_coarse_train: torch.Size([20440, 1, 13, 29])
+X_val            : torch.Size([7300, 1, 13, 29])
+X_mask_val       : torch.Size([7300, 1, 13, 29])
+X_elev_val       : torch.Size([7300, 1, 13, 29])
+y_val            : torch.Size([7300, 1, 52, 116])
+mask_val         : torch.Size([7300, 1, 52, 116])
+y_coarse_val     : torch.Size([7300, 1, 13, 29])
+mask_coarse_val  : torch.Size([7300, 1, 13, 29])
+Normalization stats:
+X_mean: 15.384552955627441
+X_std : 11.16005802154541
+X_max : 42.550724029541016
+y_mean: 10.907337188720703
+y_std : 10.831708908081055
+y_max : 40.61493682861328
+Train/Val shapes after model input construction:
+X_train_in: torch.Size([20440, 3, 13, 29])
+X_val_in  : torch.Size([7300, 3, 13, 29])
+[I 2026-05-04 12:30:16,479] A new study created in memory with name: no-name-484e9293-3476-4b81-9e81-53e0cc86360d
+Early stopping triggered for trial 000 at epoch 047 | best epoch: 017
+[I 2026-05-04 12:34:10,704] Trial 0 finished with value: 4.368044253053336 and parameters: {'batch_size': 256, 'learning_rate': 0.00012667677417861612, 'num_resblk': 12, 'num_features': 128, 'weight_decay': 7.601416186539503e-06}. Best is trial 0 with value: 4.368044253053336.
+Early stopping triggered for trial 001 at epoch 033 | best epoch: 003
+[I 2026-05-04 12:35:33,099] Trial 1 finished with value: 3.970972916175579 and parameters: {'batch_size': 256, 'learning_rate': 0.00021706725220434306, 'num_resblk': 8, 'num_features': 64, 'weight_decay': 0.0009659164114859217}. Best is trial 1 with value: 3.970972916175579.
+Early stopping triggered for trial 002 at epoch 038 | best epoch: 008
+[I 2026-05-04 12:38:37,151] Trial 2 finished with value: 4.622944174141719 and parameters: {'batch_size': 256, 'learning_rate': 0.0001260408015257195, 'num_resblk': 12, 'num_features': 128, 'weight_decay': 4.406936415412846e-06}. Best is trial 1 with value: 3.970972916175579.
+Early stopping triggered for trial 003 at epoch 036 | best epoch: 006
+[I 2026-05-04 12:41:19,257] Trial 3 finished with value: 4.571046393493126 and parameters: {'batch_size': 256, 'learning_rate': 0.00013647838288938618, 'num_resblk': 10, 'num_features': 128, 'weight_decay': 0.0009441084634656888}. Best is trial 1 with value: 3.970972916175579.
+Early stopping triggered for trial 004 at epoch 034 | best epoch: 004
+[I 2026-05-04 12:42:36,484] Trial 4 finished with value: 4.538030805258916 and parameters: {'batch_size': 256, 'learning_rate': 0.00026553906188971484, 'num_resblk': 6, 'num_features': 64, 'weight_decay': 3.0986353706299804e-06}. Best is trial 1 with value: 3.970972916175579.

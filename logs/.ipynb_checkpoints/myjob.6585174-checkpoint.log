@@ -1,0 +1,94 @@
+Running with:
+rcm_var = tmean
+gcm_name = CanESM2
+rcm_name = CanRCM4
+grid = NAM-44i
+factor = 4
+input_source = gcm
+input_channels = 3
+hr_aux_channels = 2
+hr_elevation_file = high_res_elevation.pth
+alpha_coarse = 0.5
+n_trials = 3000
+epochs = 300
+early_stopping_patience = 30
+batch_size = 256
+data_root = /projects/sds-lab/Shuochen/downscaling/CORDEX
+save_dir = None
+num_workers = 4
+pin_memory = True
+amp = True
+grad_clip_norm = 1.0
+deterministic = False
+log_every = 5
+study_name = srresnet_tmean_CanESM2_CanRCM4_NAM44i_gcm
+optuna_storage = None
+resume_study = False
+model_name = SRResNet
+Using device: cuda
+Input source: gcm
+Input file: low_res.pth
+Input mask file: low_res_mask.pth
+Input elevation file: low_res_elevation.pth
+HR elevation file: high_res_elevation.pth
+Coarse consistency target file: coarse_4x.pth
+Coarse consistency mask file: coarse_4x_mask.pth
+Input channels: 3
+Loss setup: full_image_loss_no_ocean_constraint
+All trial checkpoints will be saved to: /projects/sds-lab/Shuochen/downscaling/CORDEX/tmean.CanESM2.CanRCM4.day.NAM-44i.GCM_to_HR_RCM/trained_models/SRResNet/GCM_low_res_with_mask_elevation/full_image_loss_no_ocean_constraint
+Loaded shapes:
+X          : torch.Size([55115, 1, 13, 29])
+X_mask     : torch.Size([55115, 1, 13, 29])
+X_elev     : torch.Size([55115, 1, 13, 29])
+y          : torch.Size([55115, 1, 52, 116])
+mask_hr    : torch.Size([55115, 1, 52, 116])
+y_coarse   : torch.Size([55115, 1, 13, 29])
+mask_coarse: torch.Size([55115, 1, 13, 29])
+After checks:
+X          : torch.Size([55115, 1, 13, 29])
+X_mask     : torch.Size([55115, 1, 13, 29])
+X_elev     : torch.Size([55115, 1, 13, 29])
+y          : torch.Size([55115, 1, 52, 116])
+mask_hr    : torch.Size([55115, 1, 52, 116])
+y_coarse   : torch.Size([55115, 1, 13, 29])
+mask_coarse: torch.Size([55115, 1, 13, 29])
+train_end_idx = 20440
+val_start_idx = 47815
+Total samples  = 55115
+Train/Val shapes before model input construction:
+X_train          : torch.Size([20440, 1, 13, 29])
+X_mask_train     : torch.Size([20440, 1, 13, 29])
+X_elev_train     : torch.Size([20440, 1, 13, 29])
+y_train          : torch.Size([20440, 1, 52, 116])
+mask_train       : torch.Size([20440, 1, 52, 116])
+y_coarse_train   : torch.Size([20440, 1, 13, 29])
+mask_coarse_train: torch.Size([20440, 1, 13, 29])
+X_val            : torch.Size([7300, 1, 13, 29])
+X_mask_val       : torch.Size([7300, 1, 13, 29])
+X_elev_val       : torch.Size([7300, 1, 13, 29])
+y_val            : torch.Size([7300, 1, 52, 116])
+mask_val         : torch.Size([7300, 1, 52, 116])
+y_coarse_val     : torch.Size([7300, 1, 13, 29])
+mask_coarse_val  : torch.Size([7300, 1, 13, 29])
+Full-image normalization stats:
+X_mean: 15.384552955627441
+X_std : 11.16005802154541
+X_max : 42.550724029541016
+y_mean: 6.068472385406494
+y_std : 9.728343963623047
+y_max : 40.61493682861328
+Train/Val shapes after model input construction:
+X_train_in: torch.Size([20440, 3, 13, 29])
+X_val_in  : torch.Size([7300, 3, 13, 29])
+[I 2026-05-06 10:25:08,183] A new study created in memory with name: srresnet_tmean_CanESM2_CanRCM4_NAM44i_gcm
+/home/wang.shuoc/downscaling/train.py:984: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = torch.cuda.amp.GradScaler(enabled=USE_AMP and device.type == "cuda")
+/home/wang.shuoc/downscaling/train.py:1028: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=USE_AMP and device.type == "cuda"):
+/home/wang.shuoc/downscaling/train.py:1118: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=USE_AMP and device.type == "cuda"):
+Trial 000 | Epoch 000 | Model: SRResNet | Input: gcm | Train Total: 0.590538 | Train HR Full: 0.433594 | Train Coarse Full: 0.313889 | Val Full Physical: 27.954963 | Val Coarse Full Physical: 18.445673 | Best Val: 27.954963 | Best Epoch: 000 | No improve: 0/30 | lr: 1.509041e-04
+Trial 000 | Epoch 004 | Model: SRResNet | Input: gcm | Train Total: 0.132304 | Train HR Full: 0.095517 | Train Coarse Full: 0.073573 | Val Full Physical: 6.727010 | Val Coarse Full Physical: 4.219465 | Best Val: 6.727010 | Best Epoch: 004 | No improve: 0/30 | lr: 1.509041e-04
+Trial 000 | Epoch 009 | Model: SRResNet | Input: gcm | Train Total: 0.116300 | Train HR Full: 0.081177 | Train Coarse Full: 0.070247 | Val Full Physical: 5.590630 | Val Coarse Full Physical: 4.420531 | Best Val: 5.395293 | Best Epoch: 008 | No improve: 1/30 | lr: 1.509041e-04
+Trial 000 | Epoch 014 | Model: SRResNet | Input: gcm | Train Total: 0.110526 | Train HR Full: 0.076616 | Train Coarse Full: 0.067820 | Val Full Physical: 4.934062 | Val Coarse Full Physical: 4.035803 | Best Val: 4.934062 | Best Epoch: 014 | No improve: 0/30 | lr: 1.509041e-04
+Trial 000 | Epoch 019 | Model: SRResNet | Input: gcm | Train Total: 0.109287 | Train HR Full: 0.075526 | Train Coarse Full: 0.067521 | Val Full Physical: 5.447778 | Val Coarse Full Physical: 4.635398 | Best Val: 4.934062 | Best Epoch: 014 | No improve: 5/30 | lr: 1.509041e-04

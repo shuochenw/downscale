@@ -1,0 +1,120 @@
+Running with:
+rcm_var = tmean
+gcm_name = CanESM2
+rcm_name = CanRCM4
+grid = NAM-44i
+factor = 4
+input_source = gcm
+input_channels = 3
+hr_aux_channels = 2
+hr_elevation_file = high_res_elevation.pth
+alpha_coarse = 0.5
+n_trials = 3000
+epochs = 300
+early_stopping_patience = 30
+batch_size = 256
+data_root = /projects/sds-lab/Shuochen/downscaling/CORDEX
+save_dir = None
+num_workers = 4
+pin_memory = True
+amp = True
+grad_clip_norm = 1.0
+deterministic = False
+log_every = 5
+study_name = climatercan_tmean_CanESM2_CanRCM4_NAM44i_gcm
+optuna_storage = None
+resume_study = False
+model_name = ClimateRCAN
+Using device: cuda
+Input source: gcm
+Input file: low_res.pth
+Input mask file: low_res_mask.pth
+Input elevation file: low_res_elevation.pth
+HR elevation file: high_res_elevation.pth
+Coarse consistency target file: coarse_4x.pth
+Coarse consistency mask file: coarse_4x_mask.pth
+Input channels: 3
+Loss setup: full_image_loss_no_ocean_constraint
+All trial checkpoints will be saved to: /projects/sds-lab/Shuochen/downscaling/CORDEX/tmean.CanESM2.CanRCM4.day.NAM-44i.GCM_to_HR_RCM/trained_models/ClimateRCAN/GCM_low_res_with_mask_elevation/full_image_loss_no_ocean_constraint
+Loaded shapes:
+X          : torch.Size([55115, 1, 13, 29])
+X_mask     : torch.Size([55115, 1, 13, 29])
+X_elev     : torch.Size([55115, 1, 13, 29])
+y          : torch.Size([55115, 1, 52, 116])
+mask_hr    : torch.Size([55115, 1, 52, 116])
+y_coarse   : torch.Size([55115, 1, 13, 29])
+mask_coarse: torch.Size([55115, 1, 13, 29])
+After checks:
+X          : torch.Size([55115, 1, 13, 29])
+X_mask     : torch.Size([55115, 1, 13, 29])
+X_elev     : torch.Size([55115, 1, 13, 29])
+y          : torch.Size([55115, 1, 52, 116])
+mask_hr    : torch.Size([55115, 1, 52, 116])
+y_coarse   : torch.Size([55115, 1, 13, 29])
+mask_coarse: torch.Size([55115, 1, 13, 29])
+train_end_idx = 20440
+val_start_idx = 47815
+Total samples  = 55115
+Train/Val shapes before model input construction:
+X_train          : torch.Size([20440, 1, 13, 29])
+X_mask_train     : torch.Size([20440, 1, 13, 29])
+X_elev_train     : torch.Size([20440, 1, 13, 29])
+y_train          : torch.Size([20440, 1, 52, 116])
+mask_train       : torch.Size([20440, 1, 52, 116])
+y_coarse_train   : torch.Size([20440, 1, 13, 29])
+mask_coarse_train: torch.Size([20440, 1, 13, 29])
+X_val            : torch.Size([7300, 1, 13, 29])
+X_mask_val       : torch.Size([7300, 1, 13, 29])
+X_elev_val       : torch.Size([7300, 1, 13, 29])
+y_val            : torch.Size([7300, 1, 52, 116])
+mask_val         : torch.Size([7300, 1, 52, 116])
+y_coarse_val     : torch.Size([7300, 1, 13, 29])
+mask_coarse_val  : torch.Size([7300, 1, 13, 29])
+Full-image normalization stats:
+X_mean: 15.384552955627441
+X_std : 11.16005802154541
+X_max : 42.550724029541016
+y_mean: 6.068472385406494
+y_std : 9.728343963623047
+y_max : 40.61493682861328
+Train/Val shapes after model input construction:
+X_train_in: torch.Size([20440, 3, 13, 29])
+X_val_in  : torch.Size([7300, 3, 13, 29])
+[I 2026-05-06 10:56:58,179] A new study created in memory with name: climatercan_tmean_CanESM2_CanRCM4_NAM44i_gcm
+/home/wang.shuoc/downscaling/train.py:995: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = torch.cuda.amp.GradScaler(enabled=USE_AMP and device.type == "cuda")
+/home/wang.shuoc/downscaling/train.py:1039: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=USE_AMP and device.type == "cuda"):
+/home/wang.shuoc/downscaling/train.py:1129: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=USE_AMP and device.type == "cuda"):
+Trial 000 | Epoch 000 | Model: ClimateRCAN | Input: gcm | Train Total: 0.833318 | Train HR Full: 0.585921 | Train Coarse Full: 0.494794 | Val Full Physical: 35.923578 | Val Coarse Full Physical: 24.660442 | Best Val: 35.923578 | Best Epoch: 000 | No improve: 0/30 | lr: 1.509041e-04
+Trial 000 | Epoch 004 | Model: ClimateRCAN | Input: gcm | Train Total: 0.249907 | Train HR Full: 0.185903 | Train Coarse Full: 0.128008 | Val Full Physical: 18.055819 | Val Coarse Full Physical: 9.935796 | Best Val: 18.055819 | Best Epoch: 004 | No improve: 0/30 | lr: 1.509041e-04
+Trial 000 | Epoch 009 | Model: ClimateRCAN | Input: gcm | Train Total: 0.213529 | Train HR Full: 0.159770 | Train Coarse Full: 0.107517 | Val Full Physical: 15.780964 | Val Coarse Full Physical: 8.452777 | Best Val: 15.780964 | Best Epoch: 009 | No improve: 0/30 | lr: 1.509041e-04
+Trial 000 | Epoch 014 | Model: ClimateRCAN | Input: gcm | Train Total: 0.186950 | Train HR Full: 0.140516 | Train Coarse Full: 0.092870 | Val Full Physical: 13.104776 | Val Coarse Full Physical: 6.526277 | Best Val: 13.104776 | Best Epoch: 014 | No improve: 0/30 | lr: 1.509041e-04
+Trial 000 | Epoch 019 | Model: ClimateRCAN | Input: gcm | Train Total: 0.177460 | Train HR Full: 0.132964 | Train Coarse Full: 0.088992 | Val Full Physical: 12.051430 | Val Coarse Full Physical: 5.997838 | Best Val: 12.051430 | Best Epoch: 019 | No improve: 0/30 | lr: 1.509041e-04
+Trial 000 | Epoch 024 | Model: ClimateRCAN | Input: gcm | Train Total: 0.164997 | Train HR Full: 0.123154 | Train Coarse Full: 0.083686 | Val Full Physical: 10.382786 | Val Coarse Full Physical: 4.994646 | Best Val: 10.382786 | Best Epoch: 024 | No improve: 0/30 | lr: 1.509041e-04
+Trial 000 | Epoch 029 | Model: ClimateRCAN | Input: gcm | Train Total: 0.155002 | Train HR Full: 0.114812 | Train Coarse Full: 0.080380 | Val Full Physical: 9.747494 | Val Coarse Full Physical: 5.072411 | Best Val: 9.747494 | Best Epoch: 029 | No improve: 0/30 | lr: 1.509041e-04
+Trial 000 | Epoch 034 | Model: ClimateRCAN | Input: gcm | Train Total: 0.144681 | Train HR Full: 0.105611 | Train Coarse Full: 0.078141 | Val Full Physical: 8.576891 | Val Coarse Full Physical: 4.891004 | Best Val: 8.463130 | Best Epoch: 033 | No improve: 1/30 | lr: 1.509041e-04
+Trial 000 | Epoch 039 | Model: ClimateRCAN | Input: gcm | Train Total: 0.139087 | Train HR Full: 0.100817 | Train Coarse Full: 0.076539 | Val Full Physical: 7.714827 | Val Coarse Full Physical: 4.485047 | Best Val: 7.678435 | Best Epoch: 037 | No improve: 2/30 | lr: 1.509041e-04
+Trial 000 | Epoch 044 | Model: ClimateRCAN | Input: gcm | Train Total: 0.134759 | Train HR Full: 0.096922 | Train Coarse Full: 0.075674 | Val Full Physical: 8.346452 | Val Coarse Full Physical: 5.471998 | Best Val: 7.186722 | Best Epoch: 043 | No improve: 1/30 | lr: 1.509041e-04
+Trial 000 | Epoch 049 | Model: ClimateRCAN | Input: gcm | Train Total: 0.129009 | Train HR Full: 0.092084 | Train Coarse Full: 0.073849 | Val Full Physical: 6.931808 | Val Coarse Full Physical: 4.607910 | Best Val: 6.931808 | Best Epoch: 049 | No improve: 0/30 | lr: 1.509041e-04
+Trial 000 | Epoch 054 | Model: ClimateRCAN | Input: gcm | Train Total: 0.126572 | Train HR Full: 0.089683 | Train Coarse Full: 0.073777 | Val Full Physical: 6.787238 | Val Coarse Full Physical: 4.815322 | Best Val: 6.380077 | Best Epoch: 050 | No improve: 4/30 | lr: 1.509041e-04
+Trial 000 | Epoch 059 | Model: ClimateRCAN | Input: gcm | Train Total: 0.123238 | Train HR Full: 0.086852 | Train Coarse Full: 0.072771 | Val Full Physical: 6.276190 | Val Coarse Full Physical: 4.642007 | Best Val: 6.276190 | Best Epoch: 059 | No improve: 0/30 | lr: 1.509041e-04
+Trial 000 | Epoch 064 | Model: ClimateRCAN | Input: gcm | Train Total: 0.119887 | Train HR Full: 0.084002 | Train Coarse Full: 0.071769 | Val Full Physical: 6.169869 | Val Coarse Full Physical: 4.699821 | Best Val: 5.912183 | Best Epoch: 063 | No improve: 1/30 | lr: 1.509041e-04
+Trial 000 | Epoch 069 | Model: ClimateRCAN | Input: gcm | Train Total: 0.120166 | Train HR Full: 0.084060 | Train Coarse Full: 0.072213 | Val Full Physical: 5.708530 | Val Coarse Full Physical: 4.368350 | Best Val: 5.708530 | Best Epoch: 069 | No improve: 0/30 | lr: 1.509041e-04
+Trial 000 | Epoch 074 | Model: ClimateRCAN | Input: gcm | Train Total: 0.118876 | Train HR Full: 0.082938 | Train Coarse Full: 0.071875 | Val Full Physical: 5.757596 | Val Coarse Full Physical: 4.484601 | Best Val: 5.584510 | Best Epoch: 073 | No improve: 1/30 | lr: 1.509041e-04
+Trial 000 | Epoch 079 | Model: ClimateRCAN | Input: gcm | Train Total: 0.118212 | Train HR Full: 0.082282 | Train Coarse Full: 0.071862 | Val Full Physical: 5.545537 | Val Coarse Full Physical: 4.405096 | Best Val: 5.413174 | Best Epoch: 078 | No improve: 1/30 | lr: 1.509041e-04
+Trial 000 | Epoch 084 | Model: ClimateRCAN | Input: gcm | Train Total: 0.117458 | Train HR Full: 0.081614 | Train Coarse Full: 0.071688 | Val Full Physical: 5.708542 | Val Coarse Full Physical: 4.665700 | Best Val: 5.413174 | Best Epoch: 078 | No improve: 6/30 | lr: 1.509041e-04
+Trial 000 | Epoch 089 | Model: ClimateRCAN | Input: gcm | Train Total: 0.116046 | Train HR Full: 0.080573 | Train Coarse Full: 0.070946 | Val Full Physical: 5.018290 | Val Coarse Full Physical: 4.025732 | Best Val: 5.018290 | Best Epoch: 089 | No improve: 0/30 | lr: 1.509041e-04
+Trial 000 | Epoch 094 | Model: ClimateRCAN | Input: gcm | Train Total: 0.114878 | Train HR Full: 0.079593 | Train Coarse Full: 0.070570 | Val Full Physical: 5.375247 | Val Coarse Full Physical: 4.437249 | Best Val: 5.018290 | Best Epoch: 089 | No improve: 5/30 | lr: 1.509041e-04
+Trial 000 | Epoch 099 | Model: ClimateRCAN | Input: gcm | Train Total: 0.114886 | Train HR Full: 0.079477 | Train Coarse Full: 0.070819 | Val Full Physical: 5.662459 | Val Coarse Full Physical: 4.731629 | Best Val: 4.695295 | Best Epoch: 098 | No improve: 1/30 | lr: 1.509041e-04
+Trial 000 | Epoch 104 | Model: ClimateRCAN | Input: gcm | Train Total: 0.113840 | Train HR Full: 0.078714 | Train Coarse Full: 0.070252 | Val Full Physical: 5.286918 | Val Coarse Full Physical: 4.576057 | Best Val: 4.695295 | Best Epoch: 098 | No improve: 6/30 | lr: 1.509041e-04
+Trial 000 | Epoch 109 | Model: ClimateRCAN | Input: gcm | Train Total: 0.113868 | Train HR Full: 0.078728 | Train Coarse Full: 0.070280 | Val Full Physical: 5.573378 | Val Coarse Full Physical: 4.785350 | Best Val: 4.695295 | Best Epoch: 098 | No improve: 11/30 | lr: 1.509041e-04
+Trial 000 | Epoch 114 | Model: ClimateRCAN | Input: gcm | Train Total: 0.117686 | Train HR Full: 0.081310 | Train Coarse Full: 0.072754 | Val Full Physical: 5.199476 | Val Coarse Full Physical: 4.375627 | Best Val: 4.695295 | Best Epoch: 098 | No improve: 16/30 | lr: 7.545205e-05
+Trial 000 | Epoch 119 | Model: ClimateRCAN | Input: gcm | Train Total: 0.110278 | Train HR Full: 0.076218 | Train Coarse Full: 0.068121 | Val Full Physical: 4.820167 | Val Coarse Full Physical: 4.081057 | Best Val: 4.695295 | Best Epoch: 098 | No improve: 21/30 | lr: 7.545205e-05
+Trial 000 | Epoch 124 | Model: ClimateRCAN | Input: gcm | Train Total: 0.110584 | Train HR Full: 0.076377 | Train Coarse Full: 0.068415 | Val Full Physical: 5.133202 | Val Coarse Full Physical: 4.399431 | Best Val: 4.695295 | Best Epoch: 098 | No improve: 26/30 | lr: 7.545205e-05
+Early stopping triggered for trial 000 at epoch 128 | best epoch: 098
+[I 2026-05-06 11:01:11,677] Trial 0 finished with value: 4.695295217742815 and parameters: {'batch_size': 256, 'learning_rate': 0.00015090410414033437, 'num_resblk': 16, 'num_features': 32, 'weight_decay': 1.493656855461763e-06}. Best is trial 0 with value: 4.695295217742815.
+Trial 001 | Epoch 000 | Model: ClimateRCAN | Input: gcm | Train Total: 0.514554 | Train HR Full: 0.368069 | Train Coarse Full: 0.292970 | Val Full Physical: 19.980047 | Val Coarse Full Physical: 12.191411 | Best Val: 19.980047 | Best Epoch: 000 | No improve: 0/30 | lr: 2.589829e-04
+Trial 001 | Epoch 004 | Model: ClimateRCAN | Input: gcm | Train Total: 0.133863 | Train HR Full: 0.094479 | Train Coarse Full: 0.078769 | Val Full Physical: 5.798734 | Val Coarse Full Physical: 4.251513 | Best Val: 5.798734 | Best Epoch: 004 | No improve: 0/30 | lr: 2.589829e-04
+Trial 001 | Epoch 009 | Model: ClimateRCAN | Input: gcm | Train Total: 0.114620 | Train HR Full: 0.078891 | Train Coarse Full: 0.071458 | Val Full Physical: 5.145737 | Val Coarse Full Physical: 4.529068 | Best Val: 4.357140 | Best Epoch: 006 | No improve: 3/30 | lr: 2.589829e-04

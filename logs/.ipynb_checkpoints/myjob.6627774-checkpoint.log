@@ -1,0 +1,86 @@
+Running with:
+rcm_var = tmean
+gcm_name = CanESM2
+rcm_name = CanRCM4
+grid = NAM-44i
+factor = 4
+input_source = gcm
+input_channels = 1
+hr_aux_channels = 2
+hr_elevation_file = high_res_elevation.pth
+num_cbam_blocks = 3
+num_bias_blocks = 4
+alpha_coarse = 0.5
+alpha_bias = 0.5
+n_trials = 3000
+epochs = 300
+early_stopping_patience = 30
+batch_size = 256
+data_root = /projects/sds-lab/Shuochen/downscaling/CORDEX
+save_dir = None
+num_workers = 4
+pin_memory = True
+amp = True
+grad_clip_norm = 1.0
+deterministic = False
+log_every = 5
+study_name = twostage_swinir_bias_sr_tmean_CanESM2_CanRCM4_NAM44i_gcm
+optuna_storage = None
+resume_study = False
+model_name = ClimateTwoStageSwinIR
+Using device: cuda
+Input source: gcm
+Input file: low_res.pth
+Input mask file: None
+Input elevation file: None
+HR elevation file: high_res_elevation.pth
+Coarse consistency target file: coarse_4x.pth
+Coarse consistency mask file: coarse_4x_mask.pth
+Input channels: 1
+Loss setup: full_image_loss_no_ocean_constraint
+All trial checkpoints will be saved to: /projects/sds-lab/Shuochen/downscaling/CORDEX/tmean.CanESM2.CanRCM4.day.NAM-44i.GCM_to_HR_RCM/trained_models/ClimateTwoStageSwinIR/GCM_low_res_with_HR_mask_elevation_aux/full_image_loss_no_ocean_constraint
+Loaded shapes:
+X          : torch.Size([55115, 1, 13, 29])
+X_hr_elev  : torch.Size([55115, 1, 52, 116])
+y          : torch.Size([55115, 1, 52, 116])
+mask_hr    : torch.Size([55115, 1, 52, 116])
+y_coarse   : torch.Size([55115, 1, 13, 29])
+mask_coarse: torch.Size([55115, 1, 13, 29])
+After checks:
+X          : torch.Size([55115, 1, 13, 29])
+X_hr_elev  : torch.Size([55115, 1, 52, 116])
+y          : torch.Size([55115, 1, 52, 116])
+mask_hr    : torch.Size([55115, 1, 52, 116])
+y_coarse   : torch.Size([55115, 1, 13, 29])
+mask_coarse: torch.Size([55115, 1, 13, 29])
+train_end_idx = 20440
+val_start_idx = 47815
+Total samples  = 55115
+Train/Val shapes before model input construction:
+X_train          : torch.Size([20440, 1, 13, 29])
+X_hr_elev_train  : torch.Size([20440, 1, 52, 116])
+y_train          : torch.Size([20440, 1, 52, 116])
+mask_train       : torch.Size([20440, 1, 52, 116])
+y_coarse_train   : torch.Size([20440, 1, 13, 29])
+mask_coarse_train: torch.Size([20440, 1, 13, 29])
+X_val            : torch.Size([7300, 1, 13, 29])
+X_hr_elev_val    : torch.Size([7300, 1, 52, 116])
+y_val            : torch.Size([7300, 1, 52, 116])
+mask_val         : torch.Size([7300, 1, 52, 116])
+y_coarse_val     : torch.Size([7300, 1, 13, 29])
+mask_coarse_val  : torch.Size([7300, 1, 13, 29])
+Full-image normalization stats:
+X_mean: 15.384552955627441
+X_std : 11.16005802154541
+X_max : 42.550724029541016
+y_mean: 6.068472385406494
+y_std : 9.728343963623047
+y_max : 40.61493682861328
+Train/Val shapes after model input construction:
+X_train_in: torch.Size([20440, 1, 13, 29])
+X_val_in  : torch.Size([7300, 1, 13, 29])
+X_train_hr_aux: torch.Size([20440, 2, 52, 116])
+X_val_hr_aux  : torch.Size([7300, 2, 52, 116])
+[I 2026-05-07 10:56:36,556] A new study created in memory with name: twostage_swinir_bias_sr_tmean_CanESM2_CanRCM4_NAM44i_gcm
+/projects/sds-lab/Shuochen/miniconda3/envs/ai/lib/python3.9/site-packages/torch/functional.py:554: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at /pytorch/aten/src/ATen/native/TensorShape.cpp:4314.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]

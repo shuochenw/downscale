@@ -1,0 +1,29 @@
+Using device: cuda
+All trial checkpoints will be saved to: /projects/sds-lab/Shuochen/downscaling/cordex_canesm2/tmean.CanESM2.CanRCM4.day.NAM-44i.mbcn-gridMET/trained_models/SRResNet_DANN
+Loaded shapes:
+X       : torch.Size([55115, 1, 13, 29])
+y       : torch.Size([55115, 1, 52, 116])
+mask_hr : torch.Size([55115, 1, 52, 116])
+
+Temporal split:
+X_source_all     : torch.Size([38580, 1, 13, 29])
+y_source_all     : torch.Size([38580, 1, 52, 116])
+mask_source_all  : torch.Size([38580, 1, 52, 116])
+X_target_all     : torch.Size([16535, 1, 13, 29])
+y_target_all     : torch.Size([16535, 1, 52, 116])
+mask_target_all  : torch.Size([16535, 1, 52, 116])
+
+Source train/val shapes:
+X_source_train   : torch.Size([30864, 1, 13, 29])
+y_source_train   : torch.Size([30864, 1, 52, 116])
+mask_source_train: torch.Size([30864, 1, 52, 116])
+X_source_val     : torch.Size([7716, 1, 13, 29])
+y_source_val     : torch.Size([7716, 1, 52, 116])
+mask_source_val  : torch.Size([7716, 1, 52, 116])
+
+Target train/eval shapes:
+X_target_train   : torch.Size([13228, 1, 13, 29])
+X_target_eval    : torch.Size([3307, 1, 13, 29])
+y_target_eval    : torch.Size([3307, 1, 52, 116])
+mask_target_eval : torch.Size([3307, 1, 52, 116])
+[I 2026-04-10 12:44:51,497] A new study created in memory with name: no-name-8f45dc77-7a96-4d86-9724-9f2c81342e7d

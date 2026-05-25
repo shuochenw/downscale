@@ -1,0 +1,4 @@
+Using device: cuda
+LR shape: torch.Size([55115, 1, 13, 29])
+HR shape: torch.Size([55115, 1, 52, 116])
+Mask shape: torch.Size([1, 1, 52, 116])

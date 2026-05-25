@@ -1,0 +1,80 @@
+Running with:
+rcm_var = tmean
+gcm_name = CanESM2
+rcm_name = CanRCM4
+grid = NAM-44i
+factor = 4
+input_source = gcm
+input_channels = 3
+alpha_coarse = 0.5
+n_trials = 1000
+epochs = 300
+early_stopping_patience = 30
+batch_size = 128
+model_name = ViTDownscaler
+Using device: cuda
+Input source: gcm
+Input file: low_res.pth
+Input mask file: low_res_mask.pth
+Input elevation file: low_res_elevation.pth
+Coarse consistency target file: coarse_4x.pth
+Coarse consistency mask file: coarse_4x_mask.pth
+Input channels: 3
+Loss setup: full_image_loss_no_ocean_constraint
+All trial checkpoints will be saved to: /projects/sds-lab/Shuochen/downscaling/CORDEX/tmean.CanESM2.CanRCM4.day.NAM-44i.GCM_to_HR_RCM/trained_models/ViTDownscaler/GCM_low_res_with_mask_elevation/full_image_loss_no_ocean_constraint
+Loaded shapes:
+X          : torch.Size([55115, 1, 13, 29])
+X_mask     : torch.Size([55115, 1, 13, 29])
+X_elev     : torch.Size([55115, 1, 13, 29])
+y          : torch.Size([55115, 1, 52, 116])
+mask_hr    : torch.Size([55115, 1, 52, 116])
+y_coarse   : torch.Size([55115, 1, 13, 29])
+mask_coarse: torch.Size([55115, 1, 13, 29])
+After checks:
+X          : torch.Size([55115, 1, 13, 29])
+X_mask     : torch.Size([55115, 1, 13, 29])
+X_elev     : torch.Size([55115, 1, 13, 29])
+y          : torch.Size([55115, 1, 52, 116])
+mask_hr    : torch.Size([55115, 1, 52, 116])
+y_coarse   : torch.Size([55115, 1, 13, 29])
+mask_coarse: torch.Size([55115, 1, 13, 29])
+train_end_idx = 20440
+val_start_idx = 47815
+Total samples  = 55115
+Train/Val shapes before model input construction:
+X_train          : torch.Size([20440, 1, 13, 29])
+X_mask_train     : torch.Size([20440, 1, 13, 29])
+X_elev_train     : torch.Size([20440, 1, 13, 29])
+y_train          : torch.Size([20440, 1, 52, 116])
+mask_train       : torch.Size([20440, 1, 52, 116])
+y_coarse_train   : torch.Size([20440, 1, 13, 29])
+mask_coarse_train: torch.Size([20440, 1, 13, 29])
+X_val            : torch.Size([7300, 1, 13, 29])
+X_mask_val       : torch.Size([7300, 1, 13, 29])
+X_elev_val       : torch.Size([7300, 1, 13, 29])
+y_val            : torch.Size([7300, 1, 52, 116])
+mask_val         : torch.Size([7300, 1, 52, 116])
+y_coarse_val     : torch.Size([7300, 1, 13, 29])
+mask_coarse_val  : torch.Size([7300, 1, 13, 29])
+Full-image normalization stats:
+X_mean: 15.384552955627441
+X_std : 11.16005802154541
+X_max : 42.550724029541016
+y_mean: 6.068472385406494
+y_std : 9.728343963623047
+y_max : 40.61493682861328
+Train/Val shapes after model input construction:
+X_train_in: torch.Size([20440, 3, 13, 29])
+X_val_in  : torch.Size([7300, 3, 13, 29])
+LR image size: (13, 29)
+HR image size: (52, 116)
+[I 2026-05-05 15:39:45,382] A new study created in memory with name: no-name-f75d44f2-e469-4693-91e7-519334bdaf7d
+Early stopping triggered for trial 000 at epoch 056 | best epoch: 026
+[I 2026-05-05 15:42:44,818] Trial 0 finished with value: 17.013441307816645 and parameters: {'batch_size': 128, 'learning_rate': 3.22484109461625e-05, 'weight_decay': 1.7768700941853862e-05, 'patch_size': 4, 'embed_dim': 192, 'depth': 2, 'num_heads': 4, 'mlp_ratio': 2.0, 'dropout': 0.0, 'decoder_features': 32}. Best is trial 0 with value: 17.013441307816645.
+Early stopping triggered for trial 001 at epoch 043 | best epoch: 013
+[I 2026-05-05 15:48:27,253] Trial 1 finished with value: 17.108782045131445 and parameters: {'batch_size': 128, 'learning_rate': 3.19118471100924e-05, 'weight_decay': 2.2158106647279174e-06, 'patch_size': 4, 'embed_dim': 64, 'depth': 8, 'num_heads': 8, 'mlp_ratio': 4.0, 'dropout': 0.0, 'decoder_features': 128}. Best is trial 0 with value: 17.013441307816645.
+Early stopping triggered for trial 002 at epoch 042 | best epoch: 012
+[I 2026-05-05 15:52:23,167] Trial 2 finished with value: 17.103247065876968 and parameters: {'batch_size': 128, 'learning_rate': 6.138483322678743e-05, 'weight_decay': 2.437511120764511e-06, 'patch_size': 4, 'embed_dim': 64, 'depth': 8, 'num_heads': 4, 'mlp_ratio': 4.0, 'dropout': 0.0, 'decoder_features': 128}. Best is trial 0 with value: 17.013441307816645.
+Early stopping triggered for trial 003 at epoch 047 | best epoch: 017
+[I 2026-05-05 15:54:10,106] Trial 3 finished with value: 16.47506471336661 and parameters: {'batch_size': 128, 'learning_rate': 4.719392258654386e-05, 'weight_decay': 0.0001975912328819772, 'patch_size': 4, 'embed_dim': 128, 'depth': 2, 'num_heads': 4, 'mlp_ratio': 2.0, 'dropout': 0.0, 'decoder_features': 128}. Best is trial 3 with value: 16.47506471336661.
+slurmstepd: error: *** JOB 6568896 ON d4053 CANCELLED AT 2026-05-05T15:54:19 ***
