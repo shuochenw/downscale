@@ -1,0 +1,56 @@
+Using device: cuda
+Experiment folder: /projects/sds-lab/Shuochen/downscaling/preprocessed/tas.CanESM2.RCA4.day.NAM-44i.raw.GCM_RCM
+Experiment branch: GCM_RCM
+Domain condition: season
+Loaded shapes:
+LR GCM X : torch.Size([54750, 1, 13, 29])
+HR RCM y : torch.Size([54750, 1, 52, 116])
+HR mask  : torch.Size([54750, 1, 52, 116])
+HR elev  : torch.Size([54750, 1, 52, 116])
+HR aux   : torch.Size([54750, 2, 52, 116])
+Domain split:
+Source train years: 1951-2005
+Target domain years: 2071-2099
+Target validation uses the same years with labels for evaluation.
+train_start_idx: 0
+train_end_idx  : 20075
+val_start_idx  : 43800
+val_end_idx    : 54385
+Split shapes:
+X_source  : torch.Size([20075, 1, 13, 29])
+y_source  : torch.Size([20075, 1, 52, 116])
+aux_source: torch.Size([20075, 2, 52, 116])
+domain_condition_source: torch.Size([20075, 2])
+X_target  : torch.Size([10585, 1, 13, 29])
+y_target  : torch.Size([10585, 1, 52, 116])
+aux_target: torch.Size([10585, 2, 52, 116])
+mask_target: torch.Size([10585, 1, 52, 116])
+domain_condition_target: torch.Size([10585, 2])
+Normalization:
+X_mean: 7.1071882247924805
+X_std : 11.00319766998291
+y_mean: 5.909543037414551
+y_std : 10.123307228088379
+All trial outputs will be saved to: /projects/sds-lab/Shuochen/downscaling/preprocessed/tas.CanESM2.RCA4.day.NAM-44i.raw.GCM_RCM/trained_models/ClimateRCAN_ShallowFusion_DANN_new/dann_new_vgg_domain_season_2071_2099_bs512
+[I 2026-05-25 14:26:40,312] A new study created in RDB with name: dann_new_vgg_domain_season_2071_2099_bs512
+Optuna study: dann_new_vgg_domain_season_2071_2099_bs512
+Optuna storage: sqlite:////projects/sds-lab/Shuochen/downscaling/preprocessed/tas.CanESM2.RCA4.day.NAM-44i.raw.GCM_RCM/trained_models/ClimateRCAN_ShallowFusion_DANN_new/dann_new_vgg_domain_season_2071_2099_bs512/optuna_study.db
+DANN source domain: 1951-2005
+DANN target domain: 2071-2099
+DANN domain classifier: conditional_vgg
+DANN domain condition: season
+DANN domain warmup epochs: 10
+Comparison metric: normalized full-image target validation MSE over the full selected validation split
+Comparison baseline: not set
+/home/wang.shuoc/downscaling/train_dann_new.py:762: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = torch.cuda.amp.GradScaler(enabled=use_amp)
+/home/wang.shuoc/downscaling/train_dann_new.py:828: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=use_amp):
+/home/wang.shuoc/downscaling/train_dann_new.py:683: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=use_amp):
+Early stopping trial 0000 at epoch 032; best epoch 022.
+Trial 0000 comparable metric | normalized full-image target val MSE=0.0441989565
+[I 2026-05-25 14:31:03,130] Trial 0 finished with value: 0.04419895651440999 and parameters: {'num_resblk': 20, 'batch_size': 512, 'learning_rate': 0.00024233535983814243, 'weight_decay': 4.3130840386355105e-05, 'num_features': 128, 'num_groups': 8, 'reduction': 32, 'res_scale': 0.4, 'alpha_domain': 0.0015074839982514622, 'domain_hidden_dim': 32}. Best is trial 0 with value: 0.04419895651440999.
+Early stopping trial 0001 at epoch 030; best epoch 020.
+Trial 0001 comparable metric | normalized full-image target val MSE=0.0447693715
+[I 2026-05-25 14:36:48,469] Trial 1 finished with value: 0.04476937153462424 and parameters: {'num_resblk': 18, 'batch_size': 512, 'learning_rate': 0.00016537661909787492, 'weight_decay': 0.0004860309688499097, 'num_features': 192, 'num_groups': 8, 'reduction': 32, 'res_scale': 0.4, 'alpha_domain': 5.1639309791155685e-05, 'domain_hidden_dim': 32}. Best is trial 0 with value: 0.04419895651440999.
