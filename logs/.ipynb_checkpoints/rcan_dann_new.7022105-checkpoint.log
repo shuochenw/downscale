@@ -54,3 +54,20 @@ Trial 0000 comparable metric | normalized full-image target val MSE=0.0441989565
 Early stopping trial 0001 at epoch 030; best epoch 020.
 Trial 0001 comparable metric | normalized full-image target val MSE=0.0447693715
 [I 2026-05-25 14:36:48,469] Trial 1 finished with value: 0.04476937153462424 and parameters: {'num_resblk': 18, 'batch_size': 512, 'learning_rate': 0.00016537661909787492, 'weight_decay': 0.0004860309688499097, 'num_features': 192, 'num_groups': 8, 'reduction': 32, 'res_scale': 0.4, 'alpha_domain': 5.1639309791155685e-05, 'domain_hidden_dim': 32}. Best is trial 0 with value: 0.04419895651440999.
+Early stopping trial 0002 at epoch 038; best epoch 028.
+Trial 0002 comparable metric | normalized full-image target val MSE=0.0443265593
+[I 2026-05-25 14:43:39,920] Trial 2 finished with value: 0.04432655930322017 and parameters: {'num_resblk': 16, 'batch_size': 512, 'learning_rate': 0.00020403001981197393, 'weight_decay': 8.551687812526091e-07, 'num_features': 192, 'num_groups': 8, 'reduction': 16, 'res_scale': 0.2, 'alpha_domain': 0.00056124941218188, 'domain_hidden_dim': 64}. Best is trial 0 with value: 0.04419895651440999.
+Early stopping trial 0003 at epoch 032; best epoch 022.
+Trial 0003 comparable metric | normalized full-image target val MSE=0.0449469225
+[I 2026-05-25 14:48:13,714] Trial 3 finished with value: 0.044946922491716786 and parameters: {'num_resblk': 12, 'batch_size': 512, 'learning_rate': 0.00020010478035122257, 'weight_decay': 2.304287751446262e-06, 'num_features': 160, 'num_groups': 1, 'reduction': 16, 'res_scale': 0.4, 'alpha_domain': 0.006063089181639955, 'domain_hidden_dim': 64}. Best is trial 0 with value: 0.04419895651440999.
+Early stopping trial 0004 at epoch 049; best epoch 039.
+Trial 0004 comparable metric | normalized full-image target val MSE=0.0449309605
+[I 2026-05-25 14:56:40,969] Trial 4 finished with value: 0.04493096049841586 and parameters: {'num_resblk': 16, 'batch_size': 512, 'learning_rate': 0.00011685243711349376, 'weight_decay': 0.00011782005294630345, 'num_features': 192, 'num_groups': 4, 'reduction': 32, 'res_scale': 0.2, 'alpha_domain': 0.006020250567681424, 'domain_hidden_dim': 32}. Best is trial 0 with value: 0.04419895651440999.
+[I 2026-05-25 14:57:29,305] Trial 5 pruned. 
+[I 2026-05-25 14:58:14,400] Trial 6 pruned. 
+[I 2026-05-25 14:59:11,244] Trial 7 pruned. 
+[I 2026-05-25 14:59:45,546] Trial 8 pruned. 
+[I 2026-05-25 15:00:17,941] Trial 9 pruned. 
+Early stopping trial 0010 at epoch 027; best epoch 017.
+Trial 0010 comparable metric | normalized full-image target val MSE=0.0445718042
+[I 2026-05-25 15:03:31,437] Trial 10 finished with value: 0.04457180418028379 and parameters: {'num_resblk': 20, 'batch_size': 512, 'learning_rate': 0.0002708438381654467, 'weight_decay': 1.2759023527361407e-05, 'num_features': 128, 'num_groups': 8, 'reduction': 16, 'res_scale': 0.4, 'alpha_domain': 2.618279729759305e-05, 'domain_hidden_dim': 32}. Best is trial 0 with value: 0.04419895651440999.
