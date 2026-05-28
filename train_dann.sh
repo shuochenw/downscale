@@ -15,12 +15,12 @@ source /projects/sds-lab/Shuochen/miniconda3/bin/activate
 conda activate ai
 
 RCM_VAR=tas
-GCM_NAME=CanESM2
+GCM_NAME=EC-EARTH
 RCM_NAME=RCA4
 GRID=NAM-44i
 RCM_PRODUCT=raw
 FACTOR=4
-EXP=RCM_RCM
+EXP=GCM_RCM
 
 TRAIN_START_YEAR=1951
 TRAIN_END_YEAR=2005
@@ -40,6 +40,7 @@ python -u /home/wang.shuoc/downscaling/train_dann.py \
     --rcm_name "$RCM_NAME" \
     --grid "$GRID" \
     --rcm_product "$RCM_PRODUCT" \
+    --exp "$EXP" \
     --factor "$FACTOR" \
     --data_root "$DATA_ROOT" \
     --input_file low_res.pth \

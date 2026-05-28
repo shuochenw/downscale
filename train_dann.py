@@ -35,6 +35,13 @@ def parse_args():
     parser.add_argument("--rcm_name", type=str, default="RCA4")
     parser.add_argument("--grid", type=str, default="NAM-44i")
     parser.add_argument("--rcm_product", type=str, default="raw")
+    parser.add_argument(
+        "--exp",
+        type=str,
+        default="GCM_RCM",
+        choices=("GCM_RCM", "RCM_RCM"),
+        help="Preprocessed experiment folder suffix, e.g. GCM_RCM or RCM_RCM.",
+    )
     parser.add_argument("--factor", type=int, default=4)
 
     parser.add_argument(
@@ -243,7 +250,7 @@ def load_data(args):
         args.data_root,
         (
             f"{args.rcm_var}.{args.gcm_name}.{args.rcm_name}.day."
-            f"{args.grid}.{args.rcm_product}.GCM_RCM"
+            f"{args.grid}.{args.rcm_product}.{args.exp}"
         ),
     )
 
@@ -944,6 +951,7 @@ def build_config(args, hparams):
         "rcm_name": args.rcm_name,
         "grid": args.grid,
         "rcm_product": args.rcm_product,
+        "exp": args.exp,
         "factor": args.factor,
         "train_start_year": args.train_start_year,
         "train_end_year": args.train_end_year,
@@ -1195,7 +1203,7 @@ def main():
     if args.study_name is None:
         study_name = (
             f"rcan_hr_aux_shallowfusion_dann_{args.rcm_var}_{args.gcm_name}_"
-            f"{args.rcm_name}_{args.grid}_{args.rcm_product}"
+            f"{args.rcm_name}_{args.grid}_{args.rcm_product}_{args.exp}"
         )
     else:
         study_name = args.study_name

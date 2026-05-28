@@ -1,0 +1,57 @@
+Regular Model Period Metrics
+Dataset: tas.CanESM2.RCA4.day.NAM-44i.raw.GCM_RCM
+Model: RCAN_HR_Aux_ShallowFusion
+Epoch checkpoint: /projects/sds-lab/Shuochen/downscaling/preprocessed/tas.CanESM2.RCA4.day.NAM-44i.raw.GCM_RCM/trained_models/RCAN_HR_Aux_ShallowFusion/single_lr_gcm_with_hr_mask_elevation_to_hr_rcm_mse_shallowfusion/epoch_checkpoints/epoch_009.pth
+
+Plain RCAN
+years        samples  normalized_mse   full_mse   land_mse  full_rmse  land_rmse       PSNR       SSIM
+2006-2099      34310       0.0460752      4.722      8.467      2.173      2.910     32.223    0.89805
+2006-2040      12775       0.0444176      4.552      8.163      2.134      2.857     31.989    0.88810
+2041-2070      10950       0.0453037      4.643      8.325      2.155      2.885     31.641    0.89488
+2071-2099      10585       0.0488740      5.008      8.981      2.238      2.997     30.994    0.90157
+
+RCAN-QDM
+Additive monthly QDM fit years: 1951-2005
+years        samples  normalized_mse   full_mse   land_mse  full_rmse  land_rmse       PSNR       SSIM
+2006-2099      34310       0.0480749      4.927      8.868      2.220      2.978     32.038    0.89974
+2006-2040      12775       0.0481215      4.932      8.880      2.221      2.980     31.641    0.89023
+2041-2070      10950       0.0481358      4.933      8.879      2.221      2.980     31.377    0.89619
+2071-2099      10585       0.0504910      5.174      9.306      2.275      3.051     30.853    0.90133
+
+DANN Period Metrics
+Dataset: tas.CanESM2.RCA4.day.NAM-44i.raw.GCM_RCM
+DANN validation-period checkpoints:
+2006-2040: dann_2006_2040_bs512, trial 0012
+  /projects/sds-lab/Shuochen/downscaling/preprocessed/tas.CanESM2.RCA4.day.NAM-44i.raw.GCM_RCM/trained_models/RCAN_HR_Aux_ShallowFusion_DANN/dann_2006_2040_bs512/trial_0012/best_model.pth
+2041-2070: dann_2041_2070_bs512, trial 0092
+  /projects/sds-lab/Shuochen/downscaling/preprocessed/tas.CanESM2.RCA4.day.NAM-44i.raw.GCM_RCM/trained_models/RCAN_HR_Aux_ShallowFusion_DANN/dann_2041_2070_bs512/trial_0092/best_model.pth
+2071-2099: dann_2071_2099_bs512, trial 0186
+  /projects/sds-lab/Shuochen/downscaling/preprocessed/tas.CanESM2.RCA4.day.NAM-44i.raw.GCM_RCM/trained_models/RCAN_HR_Aux_ShallowFusion_DANN/dann_2071_2099_bs512/trial_0186/best_model.pth
+
+years        trial  samples  normalized_mse   full_mse   land_mse  full_rmse  land_rmse       PSNR       SSIM
+2006-2040     0012    12775       0.0404532      4.145      7.437      2.036      2.727     32.395    0.89824
+2041-2070     0092    10950       0.0407362      4.174      7.495      2.043      2.738     32.103    0.90358
+2071-2099     0186    10585       0.0428042      4.387      7.841      2.094      2.800     31.570    0.90682
+
+Bilinear and Bias-Correction Period Metrics
+Dataset: tas.CanESM2.RCA4.day.NAM-44i.raw.GCM_RCM
+Bilinear branch: GCM_RCM
+Input: LR GCM low_res -> high_res
+BCSD/QDM/CDF-t fit years: 1951-2005
+method    years        samples  normalized_mse   full_mse   land_mse  full_rmse  land_rmse       PSNR       SSIM
+Bilinear  2006-2099      34310       0.3381692     34.656     41.371      5.887      6.432     23.566    0.61657
+BCSD      2006-2099      34310       0.0589248      6.039     10.876      2.457      3.298     31.155    0.87753
+QDM       2006-2099      34310       0.0660962      6.774     11.218      2.603      3.349     30.656    0.86265
+CDF-t     2006-2099      34310       0.0687583      7.046     12.692      2.655      3.563     30.484    0.86318
+Bilinear  2006-2040      12775       0.3117271     31.946     39.704      5.652      6.301     23.527    0.60087
+BCSD      2006-2040      12775       0.0574026      5.883     10.596      2.425      3.255     30.875    0.86848
+QDM       2006-2040      12775       0.0597106      6.119     10.736      2.474      3.277     30.704    0.86416
+CDF-t     2006-2040      12775       0.0650654      6.668     12.010      2.582      3.466     30.331    0.85684
+Bilinear  2041-2070      10950       0.3355852     34.391     41.084      5.864      6.410     22.944    0.60852
+BCSD      2041-2070      10950       0.0582386      5.968     10.750      2.443      3.279     30.550    0.87378
+QDM       2041-2070      10950       0.0651205      6.674     11.068      2.583      3.327     30.065    0.85898
+CDF-t     2041-2070      10950       0.0684032      7.010     12.626      2.648      3.553     29.851    0.85882
+Bilinear  2071-2099      10585       0.3727551     38.200     43.679      6.181      6.609     22.170    0.61061
+BCSD      2071-2099      10585       0.0614718      6.300     11.347      2.510      3.368     29.998    0.87975
+QDM       2071-2099      10585       0.0792648      8.123     12.124      2.850      3.482     28.894    0.84555
+CDF-t     2071-2099      10585       0.0735825      7.541     13.582      2.746      3.685     29.217    0.86137

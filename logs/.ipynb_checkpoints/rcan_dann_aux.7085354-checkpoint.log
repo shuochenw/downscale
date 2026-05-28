@@ -1,0 +1,302 @@
+Using device: cuda
+Experiment folder: /projects/sds-lab/Shuochen/downscaling/preprocessed/tas.EC-EARTH.RCA4.day.NAM-44i.raw.GCM_RCM
+Loaded shapes:
+LR GCM X : torch.Size([54787, 1, 13, 29])
+HR RCM y : torch.Size([54787, 1, 52, 116])
+HR mask  : torch.Size([54787, 1, 52, 116])
+HR elev  : torch.Size([54787, 1, 52, 116])
+HR aux   : torch.Size([54787, 2, 52, 116])
+Domain split:
+Source train years: 1951-2005
+Target domain years: 2071-2099
+Target validation uses the same years with labels for evaluation.
+train_start_idx: 0
+train_end_idx  : 20089
+val_start_idx  : 43830
+val_end_idx    : 54422
+Split shapes:
+X_source  : torch.Size([20089, 1, 13, 29])
+y_source  : torch.Size([20089, 1, 52, 116])
+aux_source: torch.Size([20089, 2, 52, 116])
+X_target  : torch.Size([10592, 1, 13, 29])
+y_target  : torch.Size([10592, 1, 52, 116])
+aux_target: torch.Size([10592, 2, 52, 116])
+mask_target: torch.Size([10592, 1, 52, 116])
+Normalization:
+X_mean: 5.068271636962891
+X_std : 9.414107322692871
+y_mean: 5.37286376953125
+y_std : 9.474453926086426
+All trial outputs will be saved to: /projects/sds-lab/Shuochen/downscaling/preprocessed/tas.EC-EARTH.RCA4.day.NAM-44i.raw.GCM_RCM/trained_models/RCAN_HR_Aux_ShallowFusion_DANN/dann_2071_2099_bs512
+[I 2026-05-28 00:19:37,554] A new study created in RDB with name: dann_2071_2099_bs512
+Optuna study: dann_2071_2099_bs512
+Optuna storage: sqlite:////projects/sds-lab/Shuochen/downscaling/preprocessed/tas.EC-EARTH.RCA4.day.NAM-44i.raw.GCM_RCM/trained_models/RCAN_HR_Aux_ShallowFusion_DANN/dann_2071_2099_bs512/optuna_study.db
+DANN source domain: 1951-2005
+DANN target domain: 2071-2099
+/home/wang.shuoc/downscaling/train_dann.py:671: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = torch.cuda.amp.GradScaler(enabled=use_amp)
+/home/wang.shuoc/downscaling/train_dann.py:727: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=use_amp):
+/home/wang.shuoc/downscaling/train_dann.py:592: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=use_amp):
+Early stopping trial 0000 at epoch 029; best epoch 019.
+[I 2026-05-28 00:23:15,450] Trial 0 finished with value: 0.10987283838659614 and parameters: {'num_resblk': 16, 'batch_size': 512, 'learning_rate': 0.00018835237332175437, 'weight_decay': 7.869754951627631e-05, 'num_features': 128, 'num_groups': 4, 'reduction': 32, 'res_scale': 0.2, 'alpha_domain': 6.819463766724989e-05, 'domain_hidden_dim': 64}. Best is trial 0 with value: 0.10987283838659614.
+Early stopping trial 0001 at epoch 030; best epoch 020.
+[I 2026-05-28 00:27:08,806] Trial 1 finished with value: 0.1089266148983892 and parameters: {'num_resblk': 20, 'batch_size': 512, 'learning_rate': 0.0001832479222117437, 'weight_decay': 0.0008547973769266334, 'num_features': 128, 'num_groups': 2, 'reduction': 16, 'res_scale': 0.4, 'alpha_domain': 0.004389388489953432, 'domain_hidden_dim': 64}. Best is trial 1 with value: 0.1089266148983892.
+Early stopping trial 0002 at epoch 024; best epoch 014.
+[I 2026-05-28 00:30:24,831] Trial 2 finished with value: 0.10979762979504565 and parameters: {'num_resblk': 20, 'batch_size': 512, 'learning_rate': 0.0002694108458068934, 'weight_decay': 3.399307102756886e-06, 'num_features': 128, 'num_groups': 4, 'reduction': 32, 'res_scale': 0.4, 'alpha_domain': 0.00013955661130696814, 'domain_hidden_dim': 64}. Best is trial 1 with value: 0.1089266148983892.
+Early stopping trial 0003 at epoch 037; best epoch 027.
+[I 2026-05-28 00:36:14,983] Trial 3 finished with value: 0.11053794061939522 and parameters: {'num_resblk': 12, 'batch_size': 512, 'learning_rate': 0.00012319282809183623, 'weight_decay': 1.1706977746766248e-07, 'num_features': 160, 'num_groups': 1, 'reduction': 32, 'res_scale': 0.4, 'alpha_domain': 5.034885721116222e-05, 'domain_hidden_dim': 64}. Best is trial 1 with value: 0.1089266148983892.
+Early stopping trial 0004 at epoch 026; best epoch 016.
+[I 2026-05-28 00:39:48,535] Trial 4 finished with value: 0.11062000397018795 and parameters: {'num_resblk': 20, 'batch_size': 512, 'learning_rate': 0.00028028964863041405, 'weight_decay': 2.0639986771963315e-06, 'num_features': 128, 'num_groups': 1, 'reduction': 32, 'res_scale': 0.2, 'alpha_domain': 5.1357191382439e-05, 'domain_hidden_dim': 64}. Best is trial 1 with value: 0.1089266148983892.
+[I 2026-05-28 00:41:57,746] Trial 5 pruned. 
+[I 2026-05-28 00:43:36,879] Trial 6 pruned. 
+[I 2026-05-28 00:45:41,263] Trial 7 pruned. 
+[I 2026-05-28 00:47:08,965] Trial 8 pruned. 
+[I 2026-05-28 00:47:53,620] Trial 9 pruned. 
+[I 2026-05-28 00:48:40,201] Trial 10 pruned. 
+[I 2026-05-28 00:49:51,381] Trial 11 pruned. 
+[I 2026-05-28 00:51:05,434] Trial 12 pruned. 
+[I 2026-05-28 00:51:56,387] Trial 13 pruned. 
+Early stopping trial 0014 at epoch 028; best epoch 018.
+[I 2026-05-28 00:58:01,761] Trial 14 finished with value: 0.10985109896548205 and parameters: {'num_resblk': 20, 'batch_size': 512, 'learning_rate': 0.0002362045897003029, 'weight_decay': 6.830546548570806e-06, 'num_features': 192, 'num_groups': 2, 'reduction': 16, 'res_scale': 0.4, 'alpha_domain': 0.00014265896291609174, 'domain_hidden_dim': 64}. Best is trial 1 with value: 0.1089266148983892.
+[I 2026-05-28 00:58:49,055] Trial 15 pruned. 
+[I 2026-05-28 00:59:37,188] Trial 16 pruned. 
+[I 2026-05-28 01:00:27,010] Trial 17 pruned. 
+Early stopping trial 0018 at epoch 025; best epoch 015.
+[I 2026-05-28 01:05:40,930] Trial 18 finished with value: 0.10971105159499495 and parameters: {'num_resblk': 20, 'batch_size': 512, 'learning_rate': 0.00017652925292355268, 'weight_decay': 3.0983573400704953e-06, 'num_features': 192, 'num_groups': 2, 'reduction': 32, 'res_scale': 0.4, 'alpha_domain': 0.00012951299093134444, 'domain_hidden_dim': 32}. Best is trial 1 with value: 0.1089266148983892.
+[I 2026-05-28 01:07:34,435] Trial 19 pruned. 
+Early stopping trial 0020 at epoch 026; best epoch 016.
+[I 2026-05-28 01:12:43,069] Trial 20 finished with value: 0.1090986177640379 and parameters: {'num_resblk': 16, 'batch_size': 512, 'learning_rate': 0.0001453171228380236, 'weight_decay': 1.2458823652914086e-05, 'num_features': 192, 'num_groups': 2, 'reduction': 16, 'res_scale': 0.4, 'alpha_domain': 0.0013294549953244482, 'domain_hidden_dim': 32}. Best is trial 1 with value: 0.1089266148983892.
+[I 2026-05-28 01:14:09,387] Trial 21 pruned. 
+[I 2026-05-28 01:15:44,032] Trial 22 pruned. 
+[I 2026-05-28 01:16:47,196] Trial 23 pruned. 
+Early stopping trial 0024 at epoch 023; best epoch 013.
+[I 2026-05-28 01:21:09,726] Trial 24 finished with value: 0.10917046236217562 and parameters: {'num_resblk': 16, 'batch_size': 512, 'learning_rate': 0.00017323640287308405, 'weight_decay': 3.7066391732369e-05, 'num_features': 192, 'num_groups': 2, 'reduction': 16, 'res_scale': 0.4, 'alpha_domain': 0.0029265215146624317, 'domain_hidden_dim': 32}. Best is trial 1 with value: 0.1089266148983892.
+Early stopping trial 0025 at epoch 025; best epoch 015.
+[I 2026-05-28 01:25:55,138] Trial 25 finished with value: 0.10944360397823627 and parameters: {'num_resblk': 16, 'batch_size': 512, 'learning_rate': 0.00016435327829758924, 'weight_decay': 4.8060841702288486e-05, 'num_features': 192, 'num_groups': 2, 'reduction': 16, 'res_scale': 0.4, 'alpha_domain': 0.0034103089762482428, 'domain_hidden_dim': 32}. Best is trial 1 with value: 0.1089266148983892.
+Early stopping trial 0026 at epoch 029; best epoch 019.
+[I 2026-05-28 01:31:19,126] Trial 26 finished with value: 0.10815408564766368 and parameters: {'num_resblk': 16, 'batch_size': 512, 'learning_rate': 0.0001983858174984206, 'weight_decay': 0.00023725741844735695, 'num_features': 192, 'num_groups': 2, 'reduction': 16, 'res_scale': 0.4, 'alpha_domain': 0.00773187339936678, 'domain_hidden_dim': 32}. Best is trial 26 with value: 0.10815408564766368.
+Early stopping trial 0027 at epoch 040; best epoch 030.
+[I 2026-05-28 01:38:30,768] Trial 27 finished with value: 0.10707515984593562 and parameters: {'num_resblk': 16, 'batch_size': 512, 'learning_rate': 0.00021412156392985876, 'weight_decay': 0.0003127784366301952, 'num_features': 160, 'num_groups': 2, 'reduction': 16, 'res_scale': 0.4, 'alpha_domain': 0.00977936657815269, 'domain_hidden_dim': 32}. Best is trial 27 with value: 0.10707515984593562.
+[I 2026-05-28 01:39:31,634] Trial 28 pruned. 
+Early stopping trial 0029 at epoch 026; best epoch 016.
+[I 2026-05-28 01:44:32,721] Trial 29 finished with value: 0.10822120308876038 and parameters: {'num_resblk': 16, 'batch_size': 512, 'learning_rate': 0.00019453805032101676, 'weight_decay': 0.0005065673707713869, 'num_features': 160, 'num_groups': 8, 'reduction': 16, 'res_scale': 0.3, 'alpha_domain': 0.006344688271012563, 'domain_hidden_dim': 32}. Best is trial 27 with value: 0.10707515984593562.
+[I 2026-05-28 01:45:43,192] Trial 30 pruned. 
+Early stopping trial 0031 at epoch 035; best epoch 025.
+[I 2026-05-28 01:52:28,213] Trial 31 finished with value: 0.10830847770425849 and parameters: {'num_resblk': 16, 'batch_size': 512, 'learning_rate': 0.0002499420721475413, 'weight_decay': 0.0004900602376033174, 'num_features': 160, 'num_groups': 8, 'reduction': 16, 'res_scale': 0.3, 'alpha_domain': 0.005298772232292366, 'domain_hidden_dim': 32}. Best is trial 27 with value: 0.10707515984593562.
+[I 2026-05-28 01:54:03,226] Trial 32 pruned. 
+[I 2026-05-28 01:55:33,647] Trial 33 pruned. 
+Early stopping trial 0034 at epoch 027; best epoch 017.
+[I 2026-05-28 02:00:25,473] Trial 34 finished with value: 0.10849301793874211 and parameters: {'num_resblk': 14, 'batch_size': 512, 'learning_rate': 0.00020632301970010825, 'weight_decay': 0.0006184821542362639, 'num_features': 160, 'num_groups': 8, 'reduction': 16, 'res_scale': 0.3, 'alpha_domain': 0.0023842059246639226, 'domain_hidden_dim': 32}. Best is trial 27 with value: 0.10707515984593562.
+[I 2026-05-28 02:01:32,524] Trial 35 pruned. 
+[I 2026-05-28 02:02:56,104] Trial 36 pruned. 
+Early stopping trial 0037 at epoch 033; best epoch 023.
+[I 2026-05-28 02:09:21,623] Trial 37 finished with value: 0.10837425975821169 and parameters: {'num_resblk': 16, 'batch_size': 512, 'learning_rate': 0.0002455580247593974, 'weight_decay': 0.0002057442116352327, 'num_features': 160, 'num_groups': 8, 'reduction': 16, 'res_scale': 0.3, 'alpha_domain': 0.005019232858898752, 'domain_hidden_dim': 32}. Best is trial 27 with value: 0.10707515984593562.
+Early stopping trial 0038 at epoch 030; best epoch 020.
+[I 2026-05-28 02:14:47,124] Trial 38 finished with value: 0.10759578444896507 and parameters: {'num_resblk': 14, 'batch_size': 512, 'learning_rate': 0.0002636643531621626, 'weight_decay': 0.0007936625090936196, 'num_features': 160, 'num_groups': 8, 'reduction': 16, 'res_scale': 0.2, 'alpha_domain': 0.00404917808186101, 'domain_hidden_dim': 32}. Best is trial 27 with value: 0.10707515984593562.
+Early stopping trial 0039 at epoch 026; best epoch 016.
+[I 2026-05-28 02:18:45,304] Trial 39 finished with value: 0.1097581528824982 and parameters: {'num_resblk': 12, 'batch_size': 512, 'learning_rate': 0.0002988708127555772, 'weight_decay': 0.0009585715242348095, 'num_features': 160, 'num_groups': 1, 'reduction': 16, 'res_scale': 0.2, 'alpha_domain': 0.0035044860064094036, 'domain_hidden_dim': 32}. Best is trial 27 with value: 0.10707515984593562.
+Early stopping trial 0040 at epoch 041; best epoch 031.
+[I 2026-05-28 02:26:07,537] Trial 40 finished with value: 0.1091806709406239 and parameters: {'num_resblk': 14, 'batch_size': 512, 'learning_rate': 0.0002304678872642586, 'weight_decay': 6.287189903740751e-05, 'num_features': 160, 'num_groups': 8, 'reduction': 32, 'res_scale': 0.2, 'alpha_domain': 0.00692990759444879, 'domain_hidden_dim': 32}. Best is trial 27 with value: 0.10707515984593562.
+Early stopping trial 0041 at epoch 030; best epoch 020.
+[I 2026-05-28 02:31:29,083] Trial 41 finished with value: 0.1093614065395021 and parameters: {'num_resblk': 14, 'batch_size': 512, 'learning_rate': 0.00027318315124932993, 'weight_decay': 0.0005554986893216234, 'num_features': 160, 'num_groups': 8, 'reduction': 16, 'res_scale': 0.2, 'alpha_domain': 0.004610481841702084, 'domain_hidden_dim': 32}. Best is trial 27 with value: 0.10707515984593562.
+[I 2026-05-28 02:32:46,783] Trial 42 pruned. 
+[I 2026-05-28 02:33:56,879] Trial 43 pruned. 
+[I 2026-05-28 02:34:58,400] Trial 44 pruned. 
+[I 2026-05-28 02:36:18,501] Trial 45 pruned. 
+[I 2026-05-28 02:37:26,883] Trial 46 pruned. 
+[I 2026-05-28 02:39:10,008] Trial 47 pruned. 
+[I 2026-05-28 02:40:26,377] Trial 48 pruned. 
+Early stopping trial 0049 at epoch 028; best epoch 018.
+[I 2026-05-28 02:45:20,256] Trial 49 finished with value: 0.10973462192313549 and parameters: {'num_resblk': 14, 'batch_size': 512, 'learning_rate': 0.0002466308518443344, 'weight_decay': 0.00010082116003734953, 'num_features': 160, 'num_groups': 4, 'reduction': 16, 'res_scale': 0.3, 'alpha_domain': 0.0009271378814995602, 'domain_hidden_dim': 32}. Best is trial 27 with value: 0.10707515984593562.
+[I 2026-05-28 02:46:53,293] Trial 50 pruned. 
+Early stopping trial 0051 at epoch 027; best epoch 017.
+[I 2026-05-28 02:52:03,998] Trial 51 finished with value: 0.10618143395894963 and parameters: {'num_resblk': 16, 'batch_size': 512, 'learning_rate': 0.00028583136317026194, 'weight_decay': 0.00015364450103575142, 'num_features': 160, 'num_groups': 8, 'reduction': 16, 'res_scale': 0.3, 'alpha_domain': 0.004505321558784355, 'domain_hidden_dim': 32}. Best is trial 51 with value: 0.10618143395894963.
+[I 2026-05-28 02:53:16,242] Trial 52 pruned. 
+[I 2026-05-28 02:54:48,352] Trial 53 pruned. 
+Early stopping trial 0054 at epoch 035; best epoch 025.
+[I 2026-05-28 03:01:30,381] Trial 54 finished with value: 0.10972145715238825 and parameters: {'num_resblk': 16, 'batch_size': 512, 'learning_rate': 0.00026684805417945213, 'weight_decay': 0.00015469420133619964, 'num_features': 160, 'num_groups': 8, 'reduction': 16, 'res_scale': 0.3, 'alpha_domain': 1.0958952711378364e-05, 'domain_hidden_dim': 32}. Best is trial 51 with value: 0.10618143395894963.
+[I 2026-05-28 03:03:01,121] Trial 55 pruned. 
+[I 2026-05-28 03:04:19,014] Trial 56 pruned. 
+[I 2026-05-28 03:05:26,711] Trial 57 pruned. 
+[I 2026-05-28 03:06:13,307] Trial 58 pruned. 
+Early stopping trial 0059 at epoch 023; best epoch 013.
+[I 2026-05-28 03:10:24,174] Trial 59 finished with value: 0.11059391431037753 and parameters: {'num_resblk': 14, 'batch_size': 512, 'learning_rate': 0.0002374134755043395, 'weight_decay': 0.0002619733988570968, 'num_features': 192, 'num_groups': 2, 'reduction': 32, 'res_scale': 0.4, 'alpha_domain': 0.005728020949454193, 'domain_hidden_dim': 64}. Best is trial 51 with value: 0.10618143395894963.
+[I 2026-05-28 03:13:40,143] Trial 60 pruned. 
+[I 2026-05-28 03:15:21,751] Trial 61 pruned. 
+[I 2026-05-28 03:17:07,114] Trial 62 pruned. 
+[I 2026-05-28 03:18:46,691] Trial 63 pruned. 
+[I 2026-05-28 03:20:01,465] Trial 64 pruned. 
+[I 2026-05-28 03:21:26,883] Trial 65 pruned. 
+[I 2026-05-28 03:22:40,124] Trial 66 pruned. 
+[I 2026-05-28 03:23:43,995] Trial 67 pruned. 
+[I 2026-05-28 03:24:48,711] Trial 68 pruned. 
+[I 2026-05-28 03:29:28,466] Trial 69 pruned. 
+[I 2026-05-28 03:30:40,353] Trial 70 pruned. 
+[I 2026-05-28 03:32:08,359] Trial 71 pruned. 
+[I 2026-05-28 03:33:33,957] Trial 72 pruned. 
+[I 2026-05-28 03:34:55,908] Trial 73 pruned. 
+[I 2026-05-28 03:37:54,386] Trial 74 pruned. 
+[I 2026-05-28 03:39:15,949] Trial 75 pruned. 
+[I 2026-05-28 03:40:36,878] Trial 76 pruned. 
+[I 2026-05-28 03:42:09,649] Trial 77 pruned. 
+[I 2026-05-28 03:43:19,097] Trial 78 pruned. 
+[I 2026-05-28 03:43:57,706] Trial 79 pruned. 
+[I 2026-05-28 03:45:02,408] Trial 80 pruned. 
+[I 2026-05-28 03:45:50,761] Trial 81 pruned. 
+[I 2026-05-28 03:46:37,141] Trial 82 pruned. 
+[I 2026-05-28 03:47:19,222] Trial 83 pruned. 
+[I 2026-05-28 03:48:20,396] Trial 84 pruned. 
+[I 2026-05-28 03:49:58,713] Trial 85 pruned. 
+[I 2026-05-28 03:51:09,515] Trial 86 pruned. 
+[I 2026-05-28 03:52:28,129] Trial 87 pruned. 
+[I 2026-05-28 03:53:38,817] Trial 88 pruned. 
+[I 2026-05-28 03:54:24,343] Trial 89 pruned. 
+Early stopping trial 0090 at epoch 034; best epoch 024.
+[I 2026-05-28 04:00:15,309] Trial 90 finished with value: 0.10842009462708793 and parameters: {'num_resblk': 14, 'batch_size': 512, 'learning_rate': 0.0002271943495327669, 'weight_decay': 8.605035694747137e-07, 'num_features': 160, 'num_groups': 2, 'reduction': 16, 'res_scale': 0.3, 'alpha_domain': 0.006491474605552621, 'domain_hidden_dim': 32}. Best is trial 51 with value: 0.10618143395894963.
+[I 2026-05-28 04:01:37,057] Trial 91 pruned. 
+[I 2026-05-28 04:02:40,714] Trial 92 pruned. 
+[I 2026-05-28 04:04:18,926] Trial 93 pruned. 
+[I 2026-05-28 04:07:29,007] Trial 94 pruned. 
+[I 2026-05-28 04:08:52,656] Trial 95 pruned. 
+[I 2026-05-28 04:09:56,439] Trial 96 pruned. 
+[I 2026-05-28 04:11:22,165] Trial 97 pruned. 
+[I 2026-05-28 04:12:44,759] Trial 98 pruned. 
+[I 2026-05-28 04:14:15,462] Trial 99 pruned. 
+[I 2026-05-28 04:15:19,064] Trial 100 pruned. 
+[I 2026-05-28 04:16:38,602] Trial 101 pruned. 
+[I 2026-05-28 04:17:45,724] Trial 102 pruned. 
+[I 2026-05-28 04:18:57,125] Trial 103 pruned. 
+[I 2026-05-28 04:20:26,808] Trial 104 pruned. 
+[I 2026-05-28 04:21:40,621] Trial 105 pruned. 
+[I 2026-05-28 04:22:51,667] Trial 106 pruned. 
+[I 2026-05-28 04:26:52,596] Trial 107 pruned. 
+[I 2026-05-28 04:27:51,916] Trial 108 pruned. 
+Early stopping trial 0109 at epoch 023; best epoch 013.
+[I 2026-05-28 04:32:31,269] Trial 109 finished with value: 0.10974468858040351 and parameters: {'num_resblk': 18, 'batch_size': 512, 'learning_rate': 0.0002530829191127964, 'weight_decay': 0.0005135053978805146, 'num_features': 192, 'num_groups': 2, 'reduction': 16, 'res_scale': 0.3, 'alpha_domain': 3.443923663056514e-05, 'domain_hidden_dim': 32}. Best is trial 51 with value: 0.10618143395894963.
+[I 2026-05-28 04:33:37,359] Trial 110 pruned. 
+[I 2026-05-28 04:35:02,993] Trial 111 pruned. 
+[I 2026-05-28 04:36:09,589] Trial 112 pruned. 
+[I 2026-05-28 04:37:14,121] Trial 113 pruned. 
+[I 2026-05-28 04:38:25,397] Trial 114 pruned. 
+[I 2026-05-28 04:39:23,332] Trial 115 pruned. 
+[I 2026-05-28 04:40:57,930] Trial 116 pruned. 
+[I 2026-05-28 04:42:12,364] Trial 117 pruned. 
+[I 2026-05-28 04:43:31,979] Trial 118 pruned. 
+[I 2026-05-28 04:44:17,121] Trial 119 pruned. 
+[I 2026-05-28 04:45:22,155] Trial 120 pruned. 
+[I 2026-05-28 04:46:24,789] Trial 121 pruned. 
+Early stopping trial 0122 at epoch 032; best epoch 022.
+[I 2026-05-28 04:52:00,249] Trial 122 finished with value: 0.10732538743771815 and parameters: {'num_resblk': 14, 'batch_size': 512, 'learning_rate': 0.00024183223297812045, 'weight_decay': 5.388915127663348e-05, 'num_features': 160, 'num_groups': 8, 'reduction': 32, 'res_scale': 0.2, 'alpha_domain': 0.007545150857118498, 'domain_hidden_dim': 32}. Best is trial 51 with value: 0.10618143395894963.
+[I 2026-05-28 04:53:01,225] Trial 123 pruned. 
+[I 2026-05-28 04:54:02,471] Trial 124 pruned. 
+[I 2026-05-28 04:55:29,248] Trial 125 pruned. 
+[I 2026-05-28 04:56:57,126] Trial 126 pruned. 
+[I 2026-05-28 04:58:18,183] Trial 127 pruned. 
+[I 2026-05-28 04:59:43,005] Trial 128 pruned. 
+[I 2026-05-28 05:00:48,348] Trial 129 pruned. 
+[I 2026-05-28 05:01:55,468] Trial 130 pruned. 
+[I 2026-05-28 05:03:17,157] Trial 131 pruned. 
+[I 2026-05-28 05:04:40,333] Trial 132 pruned. 
+[I 2026-05-28 05:05:42,620] Trial 133 pruned. 
+[I 2026-05-28 05:06:23,094] Trial 134 pruned. 
+[I 2026-05-28 05:07:44,982] Trial 135 pruned. 
+[I 2026-05-28 05:09:01,318] Trial 136 pruned. 
+[I 2026-05-28 05:10:29,277] Trial 137 pruned. 
+[I 2026-05-28 05:11:52,540] Trial 138 pruned. 
+[I 2026-05-28 05:13:10,540] Trial 139 pruned. 
+[I 2026-05-28 05:14:20,845] Trial 140 pruned. 
+[I 2026-05-28 05:15:23,648] Trial 141 pruned. 
+Early stopping trial 0142 at epoch 026; best epoch 016.
+[I 2026-05-28 05:20:13,567] Trial 142 finished with value: 0.10695315994254773 and parameters: {'num_resblk': 16, 'batch_size': 512, 'learning_rate': 0.0002719373782193983, 'weight_decay': 0.0006123008174223618, 'num_features': 160, 'num_groups': 8, 'reduction': 16, 'res_scale': 0.2, 'alpha_domain': 0.005100816420259659, 'domain_hidden_dim': 32}. Best is trial 51 with value: 0.10618143395894963.
+[I 2026-05-28 05:21:41,613] Trial 143 pruned. 
+[I 2026-05-28 05:23:11,859] Trial 144 pruned. 
+[I 2026-05-28 05:24:38,614] Trial 145 pruned. 
+Early stopping trial 0146 at epoch 030; best epoch 020.
+[I 2026-05-28 05:30:24,192] Trial 146 finished with value: 0.10875692391863763 and parameters: {'num_resblk': 16, 'batch_size': 512, 'learning_rate': 0.00025652916894995973, 'weight_decay': 0.000628635474208931, 'num_features': 192, 'num_groups': 8, 'reduction': 16, 'res_scale': 0.4, 'alpha_domain': 0.0069385815301891045, 'domain_hidden_dim': 32}. Best is trial 51 with value: 0.10618143395894963.
+Early stopping trial 0147 at epoch 027; best epoch 017.
+[I 2026-05-28 05:35:39,301] Trial 147 finished with value: 0.1069966380419688 and parameters: {'num_resblk': 16, 'batch_size': 512, 'learning_rate': 0.0002616265913336725, 'weight_decay': 0.0006359633649887726, 'num_features': 192, 'num_groups': 8, 'reduction': 16, 'res_scale': 0.4, 'alpha_domain': 0.0037427047929933233, 'domain_hidden_dim': 32}. Best is trial 51 with value: 0.10618143395894963.
+[I 2026-05-28 05:36:58,811] Trial 148 pruned. 
+[I 2026-05-28 05:38:30,236] Trial 149 pruned. 
+Early stopping trial 0150 at epoch 026; best epoch 016.
+[I 2026-05-28 05:43:32,786] Trial 150 finished with value: 0.10876672424578594 and parameters: {'num_resblk': 16, 'batch_size': 512, 'learning_rate': 0.0002516211397375415, 'weight_decay': 0.0008556648166560784, 'num_features': 192, 'num_groups': 8, 'reduction': 16, 'res_scale': 0.4, 'alpha_domain': 0.0076331106302239705, 'domain_hidden_dim': 64}. Best is trial 51 with value: 0.10618143395894963.
+[I 2026-05-28 05:44:54,815] Trial 151 pruned. 
+Early stopping trial 0152 at epoch 024; best epoch 014.
+[I 2026-05-28 05:49:37,048] Trial 152 finished with value: 0.10787022978157436 and parameters: {'num_resblk': 16, 'batch_size': 512, 'learning_rate': 0.0002710995592858383, 'weight_decay': 0.0008444108566443844, 'num_features': 192, 'num_groups': 8, 'reduction': 16, 'res_scale': 0.4, 'alpha_domain': 0.005394528680244589, 'domain_hidden_dim': 64}. Best is trial 51 with value: 0.10618143395894963.
+Early stopping trial 0153 at epoch 028; best epoch 018.
+[I 2026-05-28 05:55:04,629] Trial 153 finished with value: 0.10765471001045941 and parameters: {'num_resblk': 16, 'batch_size': 512, 'learning_rate': 0.0002816775229062361, 'weight_decay': 0.000755011956705444, 'num_features': 192, 'num_groups': 8, 'reduction': 16, 'res_scale': 0.4, 'alpha_domain': 0.0053481576451806165, 'domain_hidden_dim': 64}. Best is trial 51 with value: 0.10618143395894963.
+Early stopping trial 0154 at epoch 028; best epoch 018.
+[I 2026-05-28 06:00:28,989] Trial 154 finished with value: 0.10682458860456404 and parameters: {'num_resblk': 16, 'batch_size': 512, 'learning_rate': 0.0002828483896739876, 'weight_decay': 0.0007912480746849446, 'num_features': 192, 'num_groups': 8, 'reduction': 16, 'res_scale': 0.4, 'alpha_domain': 0.00873202800041689, 'domain_hidden_dim': 64}. Best is trial 51 with value: 0.10618143395894963.
+[I 2026-05-28 06:01:58,413] Trial 155 pruned. 
+Early stopping trial 0156 at epoch 033; best epoch 023.
+[I 2026-05-28 06:08:15,114] Trial 156 finished with value: 0.10942052102160958 and parameters: {'num_resblk': 16, 'batch_size': 512, 'learning_rate': 0.0002795538650746533, 'weight_decay': 0.000611065335814274, 'num_features': 192, 'num_groups': 8, 'reduction': 16, 'res_scale': 0.4, 'alpha_domain': 0.0055330571043768675, 'domain_hidden_dim': 64}. Best is trial 51 with value: 0.10618143395894963.
+[I 2026-05-28 06:09:22,450] Trial 157 pruned. 
+[I 2026-05-28 06:10:54,888] Trial 158 pruned. 
+Early stopping trial 0159 at epoch 026; best epoch 016.
+[I 2026-05-28 06:15:55,886] Trial 159 finished with value: 0.10669459717691485 and parameters: {'num_resblk': 16, 'batch_size': 512, 'learning_rate': 0.0002813955976485659, 'weight_decay': 0.000847395562665407, 'num_features': 192, 'num_groups': 8, 'reduction': 16, 'res_scale': 0.4, 'alpha_domain': 0.006402874968924482, 'domain_hidden_dim': 64}. Best is trial 51 with value: 0.10618143395894963.
+[I 2026-05-28 06:17:28,315] Trial 160 pruned. 
+[I 2026-05-28 06:18:57,430] Trial 161 pruned. 
+Early stopping trial 0162 at epoch 022; best epoch 012.
+[I 2026-05-28 06:23:14,053] Trial 162 finished with value: 0.10996987587375583 and parameters: {'num_resblk': 16, 'batch_size': 512, 'learning_rate': 0.00026312885797208, 'weight_decay': 0.0008567186977353597, 'num_features': 192, 'num_groups': 8, 'reduction': 16, 'res_scale': 0.4, 'alpha_domain': 0.006902008474729288, 'domain_hidden_dim': 64}. Best is trial 51 with value: 0.10618143395894963.
+[I 2026-05-28 06:24:32,978] Trial 163 pruned. 
+[I 2026-05-28 06:26:03,239] Trial 164 pruned. 
+Early stopping trial 0165 at epoch 035; best epoch 025.
+[I 2026-05-28 06:32:44,925] Trial 165 finished with value: 0.10682411104710801 and parameters: {'num_resblk': 16, 'batch_size': 512, 'learning_rate': 0.000281232332225118, 'weight_decay': 0.0006939068852925878, 'num_features': 192, 'num_groups': 8, 'reduction': 16, 'res_scale': 0.4, 'alpha_domain': 0.008848963393573045, 'domain_hidden_dim': 64}. Best is trial 51 with value: 0.10618143395894963.
+[I 2026-05-28 06:33:53,355] Trial 166 pruned. 
+[I 2026-05-28 06:35:22,851] Trial 167 pruned. 
+[I 2026-05-28 06:36:42,447] Trial 168 pruned. 
+[I 2026-05-28 06:38:13,126] Trial 169 pruned. 
+[I 2026-05-28 06:39:43,531] Trial 170 pruned. 
+Early stopping trial 0171 at epoch 028; best epoch 018.
+[I 2026-05-28 06:45:04,867] Trial 171 finished with value: 0.1071046342077212 and parameters: {'num_resblk': 16, 'batch_size': 512, 'learning_rate': 0.0002626719454810629, 'weight_decay': 0.0006661806668751493, 'num_features': 192, 'num_groups': 8, 'reduction': 16, 'res_scale': 0.4, 'alpha_domain': 0.007011798236457968, 'domain_hidden_dim': 64}. Best is trial 51 with value: 0.10618143395894963.
+[I 2026-05-28 06:46:12,582] Trial 172 pruned. 
+[I 2026-05-28 06:47:43,212] Trial 173 pruned. 
+Early stopping trial 0174 at epoch 031; best epoch 021.
+[I 2026-05-28 06:53:38,362] Trial 174 finished with value: 0.10720722413315154 and parameters: {'num_resblk': 16, 'batch_size': 512, 'learning_rate': 0.0002696954327221096, 'weight_decay': 0.0004685994854052296, 'num_features': 192, 'num_groups': 8, 'reduction': 16, 'res_scale': 0.4, 'alpha_domain': 0.007524890527452724, 'domain_hidden_dim': 64}. Best is trial 51 with value: 0.10618143395894963.
+[I 2026-05-28 06:56:06,403] Trial 175 pruned. 
+Early stopping trial 0176 at epoch 025; best epoch 015.
+[I 2026-05-28 07:00:56,772] Trial 176 finished with value: 0.10821827066628954 and parameters: {'num_resblk': 16, 'batch_size': 512, 'learning_rate': 0.00026721855738518, 'weight_decay': 0.0003389112899954621, 'num_features': 192, 'num_groups': 8, 'reduction': 16, 'res_scale': 0.4, 'alpha_domain': 0.008559972574326667, 'domain_hidden_dim': 64}. Best is trial 51 with value: 0.10618143395894963.
+Early stopping trial 0177 at epoch 037; best epoch 027.
+[I 2026-05-28 07:08:00,792] Trial 177 finished with value: 0.10686487429901913 and parameters: {'num_resblk': 16, 'batch_size': 512, 'learning_rate': 0.0002711363567765833, 'weight_decay': 0.00033692197429958107, 'num_features': 192, 'num_groups': 8, 'reduction': 16, 'res_scale': 0.4, 'alpha_domain': 0.00866983801835278, 'domain_hidden_dim': 64}. Best is trial 51 with value: 0.10618143395894963.
+Early stopping trial 0178 at epoch 024; best epoch 014.
+[I 2026-05-28 07:12:45,470] Trial 178 finished with value: 0.11079859974431128 and parameters: {'num_resblk': 16, 'batch_size': 512, 'learning_rate': 0.0002695243055190033, 'weight_decay': 0.0002861749128441486, 'num_features': 192, 'num_groups': 8, 'reduction': 16, 'res_scale': 0.4, 'alpha_domain': 0.008918125892944962, 'domain_hidden_dim': 64}. Best is trial 51 with value: 0.10618143395894963.
+[I 2026-05-28 07:14:20,063] Trial 179 pruned. 
+[I 2026-05-28 07:15:27,972] Trial 180 pruned. 
+[I 2026-05-28 07:17:00,015] Trial 181 pruned. 
+[I 2026-05-28 07:18:29,690] Trial 182 pruned. 
+[I 2026-05-28 07:19:41,485] Trial 183 pruned. 
+Early stopping trial 0184 at epoch 024; best epoch 014.
+[I 2026-05-28 07:24:23,588] Trial 184 finished with value: 0.10983573298709991 and parameters: {'num_resblk': 16, 'batch_size': 512, 'learning_rate': 0.0002861718722180196, 'weight_decay': 0.00031017552485975217, 'num_features': 192, 'num_groups': 8, 'reduction': 16, 'res_scale': 0.4, 'alpha_domain': 0.005810829021329135, 'domain_hidden_dim': 64}. Best is trial 51 with value: 0.10618143395894963.
+[I 2026-05-28 07:25:58,892] Trial 185 pruned. 
+[I 2026-05-28 07:27:34,002] Trial 186 pruned. 
+[I 2026-05-28 07:29:09,016] Trial 187 pruned. 
+[I 2026-05-28 07:30:29,185] Trial 188 pruned. 
+Early stopping trial 0189 at epoch 030; best epoch 020.
+[I 2026-05-28 07:36:32,236] Trial 189 finished with value: 0.10692408892503318 and parameters: {'num_resblk': 16, 'batch_size': 512, 'learning_rate': 0.0002527304114079012, 'weight_decay': 0.0006362989475260061, 'num_features': 192, 'num_groups': 8, 'reduction': 16, 'res_scale': 0.4, 'alpha_domain': 0.005438204414140648, 'domain_hidden_dim': 64}. Best is trial 51 with value: 0.10618143395894963.
+[I 2026-05-28 07:37:41,010] Trial 190 pruned. 
+[I 2026-05-28 07:39:13,898] Trial 191 pruned. 
+Early stopping trial 0192 at epoch 033; best epoch 023.
+[I 2026-05-28 07:45:41,756] Trial 192 finished with value: 0.1091814400161141 and parameters: {'num_resblk': 16, 'batch_size': 512, 'learning_rate': 0.00024859130451719926, 'weight_decay': 0.0005741716264729259, 'num_features': 192, 'num_groups': 8, 'reduction': 16, 'res_scale': 0.4, 'alpha_domain': 0.0047729788702146544, 'domain_hidden_dim': 64}. Best is trial 51 with value: 0.10618143395894963.
+[I 2026-05-28 07:46:52,174] Trial 193 pruned. 
+Early stopping trial 0194 at epoch 021; best epoch 011.
+[I 2026-05-28 07:51:00,818] Trial 194 finished with value: 0.11123670768161555 and parameters: {'num_resblk': 16, 'batch_size': 512, 'learning_rate': 0.0002599835495943004, 'weight_decay': 0.0007230658750807453, 'num_features': 192, 'num_groups': 8, 'reduction': 16, 'res_scale': 0.4, 'alpha_domain': 0.006190498874620585, 'domain_hidden_dim': 64}. Best is trial 51 with value: 0.10618143395894963.
+[I 2026-05-28 07:52:34,446] Trial 195 pruned. 
+[I 2026-05-28 07:53:40,222] Trial 196 pruned. 
+[I 2026-05-28 07:54:49,261] Trial 197 pruned. 
+[I 2026-05-28 07:55:59,924] Trial 198 pruned. 
+Early stopping trial 0199 at epoch 024; best epoch 014.
+[I 2026-05-28 08:00:38,506] Trial 199 finished with value: 0.10703502933064256 and parameters: {'num_resblk': 16, 'batch_size': 512, 'learning_rate': 0.000289184712476255, 'weight_decay': 0.0006449020925842829, 'num_features': 192, 'num_groups': 8, 'reduction': 16, 'res_scale': 0.4, 'alpha_domain': 0.005924810295373194, 'domain_hidden_dim': 64}. Best is trial 51 with value: 0.10618143395894963.
+Early stopping trial 0200 at epoch 027; best epoch 017.
+[I 2026-05-28 08:05:51,169] Trial 200 finished with value: 0.11046638305993958 and parameters: {'num_resblk': 16, 'batch_size': 512, 'learning_rate': 0.0002906415784235914, 'weight_decay': 0.0006336612670111617, 'num_features': 192, 'num_groups': 8, 'reduction': 16, 'res_scale': 0.4, 'alpha_domain': 0.009966895306610395, 'domain_hidden_dim': 64}. Best is trial 51 with value: 0.10618143395894963.
+[I 2026-05-28 08:07:21,849] Trial 201 pruned. 
+[I 2026-05-28 08:08:30,618] Trial 202 pruned. 
+[I 2026-05-28 08:09:40,918] Trial 203 pruned. 
+[I 2026-05-28 08:10:49,375] Trial 204 pruned. 
+[I 2026-05-28 08:11:51,209] Trial 205 pruned. 
+[I 2026-05-28 08:12:59,499] Trial 206 pruned. 
+[I 2026-05-28 08:14:29,108] Trial 207 pruned. 
+[I 2026-05-28 08:15:55,552] Trial 208 pruned. 
+[I 2026-05-28 08:17:25,166] Trial 209 pruned. 
+[I 2026-05-28 08:18:32,800] Trial 210 pruned. 
+slurmstepd: error: *** JOB 7085354 ON d4055 CANCELLED AT 2026-05-28T08:19:05 DUE TO TIME LIMIT ***
